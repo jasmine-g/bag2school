@@ -1,0 +1,16 @@
+
+.title{
+    text-align: center;
+    padding-top: 5%;
+    font-size: 140px;
+    
+};
+
+.nav{
+    display:flex;
+  
+};
+
+.inline a{
+    text-decoration: none;
+}

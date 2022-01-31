@@ -30,7 +30,7 @@ Technologies Used
 1.API
     -Google Map API (It was used for the map function which aims to help users navigate around the school)
     
-2. JQuery 
+2.JQuery 
     
 3.
 
