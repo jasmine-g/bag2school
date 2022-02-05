@@ -1,17 +1,136 @@
-
+body{
+    background-color: #FFFBE0;
+}
 .title{
     text-align: center;
-    padding-top: 5%;
+    color:#006370;
     font-size: 140px;
-    
-};
+    font-family: 'Modak';
+    font-weight: 450;
+    position: relative;
 
-.nav{
+}
+
+.container{
     display:flex;
     flex-direction: row;
-  
-};
+}
 
 .inline a{
     text-decoration: none;
+    padding-right:20px;
+    padding-left:20px;
+    color:#006470;
+    font-family: 'Raleway';
+}
+
+.inline a:hover{
+    opacity: 0.5;
+}
+
+.line{
+    background-color:#006370;
+    font-size: 2px;
+    color:#006370;
+    margin-top: 15px;
+    height:30px;
+}
+
+.button{
+    display:flex;
+    justify-content: center;
+    padding:20px;
+    background-color: #CF726B;
+    font-size:50px;
+    margin-left:450px;
+    margin-right: 450px;
+    border-radius: 50px;
+    color:#FFFBE0;
+    font-family: 'Raleway';
+    font-weight: 700;
+    position: relative;
+}
+
+.logos{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    margin-top: 150px;
+
+}
+.line2{
+    background-color:#006370;
+    font-size: 4px;
+    color:#006370;
+    margin-top: 15px;
+    height:50px;
+}
+
+.NP{
+    width:200px;
+    margin-left:40px;
+}
+
+.complogo{
+    width:50px;
+    margin-right:60px;
+
+}
+
+.campus{
+    
+    left:10%;
+    position: absolute;
+    top:5%;
+    z-index: -1;
+}
+
+Questions page
+
+header{
+    display:block;
+    color:#006370;
+    align-content: flex-start;
+    
+}
+ul{
+    list-style-type:none;
+}
+li{
+    float:left;
+}
+li a{
+    display:block;
+    text-align:center;
+    padding:10px;
+    font-family: 'Raleway', sans-serif;
+}
+li a:hover{
+    background-color:white
+}
+form{
+    align-content: center;
+    padding: 30px;
+    display:flex;
+    display:block;
+    align-content: center;
+}
+#question{
+    width:70%;
+    height:100px;
+}
+label{
+    font-family: 'Raleway', sans-serif;
+}
+h2{
+    text-align: center;
+    color:#006370;
+    font-size: 100px;
+    font-family: 'Modak';
+    font-weight: 450;
+    position: relative;
+}
+#subbutton{
+    background-color: #FFFBE0;
+    
 }
