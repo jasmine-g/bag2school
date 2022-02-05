@@ -5,9 +5,10 @@ body{
     text-align: center;
     color:#006370;
     font-size: 140px;
-    font-family: 'Modak';
+    font-family: 'Modak',Arial, Helvetica, sans-serif;
     font-weight: 450;
     position: relative;
+    margin-bottom: 100px;
 
 }
 
@@ -21,7 +22,7 @@ body{
     padding-right:20px;
     padding-left:20px;
     color:#006470;
-    font-family: 'Raleway';
+    font-family: 'Raleway',Arial, Helvetica, sans-serif;
 }
 
 .inline a:hover{
@@ -39,11 +40,11 @@ body{
 .button{
     display:flex;
     justify-content: center;
-    padding:20px;
+    padding:15px;
     background-color: #CF726B;
-    font-size:50px;
-    margin-left:450px;
-    margin-right: 450px;
+    font-size:35px;
+    margin-left:550px;
+    margin-right: 550px;
     border-radius: 50px;
     color:#FFFBE0;
     font-family: 'Raleway';
@@ -55,7 +56,7 @@ body{
     display:flex;
     flex-direction:row;
     justify-content: center;
-    margin-top: 150px;
+    margin-top: 80px;
 
 }
 .line2{
@@ -85,7 +86,22 @@ body{
     z-index: -1;
 }
 
-Questions page
+.intro{
+    text-align: center;
+    font-size: 15px;
+    padding-top: 50px;
+    color:#793B36;
+    font-family: 'Raleway',Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+#anim{
+    position:absolute;
+    top:10%;
+    left:50%;
+}
+
+/*Questions page*/
 
 header{
     display:block;
