@@ -37,19 +37,25 @@ body{
     height:30px;
 }
 
-.button{
-    display:flex;
-    justify-content: center;
+#startbutton{
+    display:block;
     padding:15px;
+    padding-left: 40px;
+    padding-right:40px;
     background-color: #CF726B;
     font-size:35px;
-    margin-left:550px;
-    margin-right: 550px;
+    margin:auto;
     border-radius: 50px;
     color:#FFFBE0;
     font-family: 'Raleway';
     font-weight: 700;
     position: relative;
+    border:none;
+}
+
+#startbutton:hover{
+    color:#CF726B;
+    background-color: #FFFBE0;
 }
 
 .logos{
@@ -148,5 +154,50 @@ h2{
 }
 #subbutton{
     background-color: #FFFBE0;
+
     
 }
+
+
+/* username section*/
+.namesect{
+    display:none;
+    justify-content: center;
+    padding-top:50px;
+}
+
+label {
+    padding-right:10px;
+    font-size: 25px;
+    color:#793B36;
+    font-family: 'Raleway',Arial, Helvetica, sans-serif;
+}
+
+input#username{
+    width:250px;
+    border-radius: 5px;
+    border-color: lightgray;
+}
+
+input.submit1{
+    color:#FFFBE0;
+    border-radius: 20px;
+    background-color: #793B36;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border:none;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size:15px;
+    margin-left:61%;
+    margin-top:20px;
+    display: none;
+    
+}
+
+.submit1:hover{
+    color:#793B36;
+    background-color: #FFFBE0;
+}
+
