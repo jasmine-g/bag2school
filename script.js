@@ -1,5 +1,5 @@
 $(document).ready(function () {
-$('#startbutton').click(function(){
+$('.startbutton').click(function(){
     $('.intro').css('display','none');
     $('.namesect').css('display','flex');
     $('.submit1').css('display','block');
@@ -48,11 +48,28 @@ $('#startbutton').click(function(){
               console.log(userStats);
           }
           
-        }
+        };
         
         function User(username) {
           this.id = Date.now();
           this.name = username;
          
-        }
+        };
+
+function nextPage(){
+  var checkInput = document.getElementById('username').value;
+  if (checkInput != "" && checkInput!= null) {
+    window.location.replace("./template1.html");
+    // alert("You Are a ADMIN");
+
+  } else {
+    alert("Please enter a username");
+    return;
+  }
+
+  }
+
+
+
+        
       
