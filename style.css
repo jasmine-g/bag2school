@@ -37,7 +37,7 @@ body{
     height:30px;
 }
 
-#startbutton{
+.startbutton{
     display:block;
     padding:15px;
     padding-left: 40px;
@@ -53,7 +53,7 @@ body{
     border:none;
 }
 
-#startbutton:hover{
+.startbutton:hover{
     color:#CF726B;
     background-color: #FFFBE0;
 }
@@ -199,5 +199,95 @@ input.submit1{
 .submit1:hover{
     color:#793B36;
     background-color: #FFFBE0;
+}
+
+
+/* template 1 portion */
+
+.bubble {
+
+    position: relative;
+    background:#D9A6A2;
+    color:#FFFBE0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    width: 550px;
+    height: 300px;
+    border-radius: 50px;
+    padding: 0px;
+    margin-left:40%;
+    margin-right: auto;
+
+
+    padding:35px;
+    margin-top: 30px;
+   
+}
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 0 32px 36px;
+    border-color: transparent transparent #D9A6A2 transparent;
+    top: 20%;
+    left: -35px;
+    margin-top: -28px;
+    
+    
+}
+
+.options{
+    display:flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+    
+}
+
+.standardbutton{
+    display:block;
+    padding:15px;
+    padding-left:70px;
+    padding-right:70px;
+    
+   margin-top: 150px;
+    background-color: #CF726B;
+    font-size:30px;
+    
+    border-radius: 50px;
+    color:#FFFBE0;
+    font-family: 'Raleway';
+    font-weight: 700;
+    position: relative;
+    border:none;
+}
+
+.standardbutton:hover{
+    color:#CF726B;
+    background-color: #FFFBE0;
+}
+
+
+.arrowbk{
+    display:flex;
+    flex-direction:arrow;
+   
+}
+.back{
+    margin-left:50px;
+   margin-right:20px;
+    width:50px;
+    margin-top:65px;
+}
+
+.backt{
+    font-size:20px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    color:#793B36;
+    margin-top:80px;
 }
 
