@@ -171,12 +171,17 @@ label {
     font-size: 25px;
     color:#793B36;
     font-family: 'Raleway',Arial, Helvetica, sans-serif;
+    margin-top: 5px;
 }
 
 input#username{
     width:250px;
+    
+    border-color: #793B36;
+
+    height:35px;
+   
     border-radius: 5px;
-    border-color: lightgray;
 }
 
 input.submit1{
@@ -216,7 +221,6 @@ input.submit1{
     width: 550px;
     height: 300px;
     border-radius: 50px;
-    padding: 0px;
     margin-left:40%;
     margin-right: auto;
 
@@ -232,7 +236,7 @@ input.submit1{
     width: 0;
     z-index: 1;
     border-style: solid;
-    border-width: 0 0 32px 36px;
+    border-width: 0 0 76px 80px;
     border-color: transparent transparent #D9A6A2 transparent;
     top: 20%;
     left: -35px;
@@ -254,16 +258,26 @@ input.submit1{
     padding-left:70px;
     padding-right:70px;
     
-   margin-top: 150px;
+    margin-top: 150px;
     background-color: #CF726B;
     font-size:30px;
-    
     border-radius: 50px;
     color:#FFFBE0;
     font-family: 'Raleway';
     font-weight: 700;
     position: relative;
     border:none;
+}
+
+.standardbutton a{
+    text-decoration: none;
+    color:#FFFBE0;
+}
+
+.standardbutton a:hover{
+    color:#CF726B;
+    background-color: #FFFBE0;
+
 }
 
 .standardbutton:hover{
@@ -280,7 +294,7 @@ input.submit1{
 .back{
     margin-left:50px;
    margin-right:20px;
-    width:50px;
+    width:40px;
     margin-top:65px;
 }
 
@@ -288,6 +302,286 @@ input.submit1{
     font-size:20px;
     font-family: "Raleway",Arial, Helvetica, sans-serif;
     color:#793B36;
-    margin-top:80px;
+    margin-top:75px;
 }
 
+/* friend username section*/
+
+
+.fnamesect{
+    display:flex;
+    flex-direction:column;
+    margin-top: 10%;
+   
+}
+
+
+input.submit2{
+    width:100px;
+    border-radius: 20px;
+    color:#FFFBE0;
+    background-color: #793B36;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border:none;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size:15px;
+    margin-left: 900px;
+    margin-top: 50px;
+}
+
+label.f{
+    margin-left:530px;
+    margin-bottom: 10px;
+    
+}
+
+.add{
+    width:50px;
+    height:50px;
+    position:absolute;
+    margin-left:970px;
+    margin-top: 70px;
+}
+
+input#fusername{
+    width:250px;
+    
+    border-color: #793B36;
+
+    height:35px;
+   
+    border-radius: 5px;
+}
+
+
+
+/*schools section*/
+.menu{
+    display:inline-block;
+    cursor:pointer;
+}
+.line1, .line2, .line3{
+    width:35px;
+    height:5px;
+    background-color: #006370;
+    margin:6px 0;
+    transition: 0.4s;
+}
+.change .line1 {
+    /*-webkit-transform:rotate(45deg) translate(-9px, 6px);*/
+    transform: rotate(45deg) translate(-9px, 6px);
+}
+.change .line2{
+    opacity: 0;
+}
+.change .line3{
+    /*-webkit-transform:rotate(45deg) translate(-8px, -8px);*/
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+.schlogos{
+    width:30px;
+    height:30px;
+}
+.dropdown{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown-menu{
+    width:100%;
+}
+
+/*business section*/
+.schoolicon{
+    display:flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.imageclue{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.reveal{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin:10px;
+}
+.baans{
+    font-size:20px;
+    color: #006370;
+}
+.reachbtn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px;
+}
+#babtn{
+    border-radius:30px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #793B36;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border:none;
+    font-size:20px;
+
+}
+#babtn:hover{
+    background-color:#A7524B
+}
+/*finish game page*/
+.endcontainer{
+    display: flex;
+    background-image:url(photos/confetti.png)
+}
+.homebtn{
+    color:#FFFBE0;
+    background-color:#BD5859;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border:none;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 30px;;
+}
+
+.homebtn:hover{
+    color:#FFFBE0;
+    background-color: #AE5750;
+}
+.endgamebtn{
+    display:flex;
+    justify-content: end;
+    align-items:flex-end ;
+}
+
+.locicon{
+    margin-left:972px;
+    height:35px;
+    width:25px;
+    margin-bottom: 0px;
+}
+.locationtitle{
+    text-align: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #870F06;
+    margin:0px;
+}
+.location{
+    margin-left:auto;
+    margin-right: auto;
+    width:40%;
+    background-color: #FDE5CD;
+    color: #870F06;
+    text-align: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    border-radius: 10px;
+}
+.prizestitle{
+    text-align: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: #006370
+}
+.prizescollected{
+    margin-left:auto;
+    margin-right: auto;
+    width:40%;
+    background-color: #C9ECF1;
+    color: #006370;
+    text-align: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 30px;
+    border-radius: 10px;;
+}
+.cameraimg{
+    z-index:1;
+    margin-right: 90%;
+    margin-left:500px;
+}
+/*QUIZ TEMPLAE*/
+.quizbtn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px;
+}
+#quizsubbtn{
+    border-radius:30px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #793B36;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border:none;
+    font-size:20px;
+}
+.quiztitle{
+    text-align: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: #2D3463;
+    margin:0px;
+}
+.quizbubble {
+
+    position: relative;
+    background:#D9A6A2;
+    color:#FFFBE0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    width: 500px;
+    height: 150px;
+    border-radius: 50px;
+    margin-left:40%;
+    margin-right: auto;
+
+
+    padding:35px;
+    margin-top: 30px;
+   
+}
+
+.quizbubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 0 76px 80px;
+    border-color: transparent transparent #D9A6A2 transparent;
+    top: 20%;
+    left: -35px;
+    margin-top: -28px;
+    
+    
+}
