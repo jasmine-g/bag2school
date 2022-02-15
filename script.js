@@ -1,17 +1,17 @@
 $(document).ready(function () {
-$('.startbutton').click(function(){
-    $('.intro').css('display','none');
-    $('.namesect').css('display','flex');
-    $('.submit1').css('display','block');
-    $('#startbutton').css('display','none');
+$(".startbutton").click(function(){
+    $(".intro").css("display","none");
+    $(".namesect").css("display","flex");
+    $(".submit1").css("display","block");
+    $("#startbutton").css("display","none");
   
 });
 
 
 
 
-  $('.submit1').click(function(){
-    if(document.getElementById('username').checkValidity() && document.getElementById('username').value !=""){
+  $(".submit1").click(function(){
+    if(document.getElementById("username").checkValidity() && document.getElementById("username").value !=""){
    
 
 
@@ -48,19 +48,19 @@ $('.startbutton').click(function(){
           
         };
         
-        function User(username) {
+        function User(username,apoints,aitemsCollected) {
           this.id = Date.now();
           this.name = username;
           this.userPoints = apoints;
           this.useritemsCollected = this.aitemsCollected;
          
         };
-});
+
 function nextPage(){
-  var checkInput = document.getElementById('username').value;
+  var checkInput = document.getElementById("username").value;
   
   if (checkInput != "" && checkInput!= null) {
-    location.replace("template1.html");
+   location.replace("template1.html")
   } else {
     alert("Please enter a username");
     return;
@@ -70,7 +70,7 @@ function nextPage(){
 
   
   
-  var x = 0;
+  let x = 0;
   function addUsername(){
     
     
@@ -79,9 +79,9 @@ function nextPage(){
       return;
     }
     
-    var newDiv = $('<input type="text" id="username" required style="margin-left:auto; margin-right:auto; width:30%; position:relative; z-index:-1; margin-top:10px;">');  //create Div Element w/ jquery
+    var newDiv = `<input type="text" id="fusername${x}" required style="margin-left:auto; margin-right:auto; width:30%; position:relative; margin-top:10px; border-color: #793B36;height:35px;border-radius: 5px;">`;  //create Div Element w/ jquery
   
-    $( ".fnamesect" ).append(newDiv);
+    $( ".fnamesect" ).append(newDiv)
  
     
     ++x;
@@ -128,7 +128,7 @@ function nextPage(){
   }
 
   $('.submit2').click(function(){
-    if(document.getElementById('fusername').checkValidity() && document.getElementById('fusername').value !=""){
+    if(document.getElementById("fusername").checkValidity() && document.getElementById("fusername").value !=""){
    
 
 
@@ -145,33 +145,80 @@ function nextPage(){
     if (localStorage.getItem("fuserStats") !== null) {
         fuserStats = JSON.parse(localStorage.getItem("fuserStats"));
       }
-      let newUser = new Group (fusername, fpoints, fitemsCollected);
+      let newGroup = new Group (fusername, fpoints, fitemsCollected);
       //create our student and store to localstorage
-      userStats.push(newUser);
-      localStorage.setItem("userStats", JSON.stringify(userStats));
+      fuserStats.push(newGroup);
+      localStorage.setItem("fuserStats", JSON.stringify(fuserStats));
 
-      showUserStats();
+      showfUserStats();
     }
     });
   
 
-    function showUserStats() {
+    function showfUserStats() {
         
-        if (localStorage.getItem("userStats") !== null) {
-          userStats = JSON.parse(localStorage.getItem("userStats"));
+        if (localStorage.getItem("fuserStats") !== null) {
+          fuserStats = JSON.parse(localStorage.getItem("fuserStats"));
 
-              console.log(userStats);
+              console.log(fuserStats);
           }
           
         };
         
-        function Group(fusername,points,itemsCollected) {
-          this.id = Date.now();
-          this.name = fusername;
-          this.points = fpoints;
-          this.itemsCollected = fitemsCollected;
+    function Group(fusername,fpoints,fitemsCollected) {
+      this.id = Date.now();
+      this.name = fusername;
+      this.points = fpoints;
+      this.itemsCollected = fitemsCollected;
          
-        };
+    };
 
 
+
+    var location = 0;
+    function verifyPasscode(){
+      var checkPasscode = document.getElementById("passcode")
+      ++location;
+      if (location == 1 && checkPasscode!="" && checkPassode!= null){
+        if (checkPasscode == "14Jk091H"){
+         user.apoints = user.apoints + 15;
+
+
+          console.log(user.apoints);
+        }
+          else {
+            alert("Please enter the correct passcode");
+            return;
+
+        }
+      }
+
+      
+      
+
+
+    };
+
+});
+  
+  
+let x = 0;
+  function addUsername(){
+    
+    
+    if(x==3){
+      alert("maximum of 4 players");
+      return;
+    }
+    
+    var newDiv = `<input type="text" id="fusername${x}" required style="margin-left:auto; margin-right:auto; width:30%; position:relative; margin-top:10px; border-color: #793B36;height:35px;border-radius: 5px;">`;  //create Div Element w/ jquery
+  
+    $( ".fnamesect" ).append(newDiv)
+ 
+    
+    ++x;
+    
+    
+    
+  }
    
