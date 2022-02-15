@@ -89,7 +89,7 @@ body{
     left:10%;
     position: absolute;
     top:5%;
-    z-index: -1;
+    z-index: -2;
 }
 
 .intro{
@@ -257,7 +257,7 @@ input.submit1{
     padding:15px;
     padding-left:70px;
     padding-right:70px;
-    
+ 
     margin-top: 150px;
     background-color: #CF726B;
     font-size:30px;
@@ -269,20 +269,16 @@ input.submit1{
     border:none;
 }
 
-.standardbutton a{
+a{
     text-decoration: none;
-    color:#FFFBE0;
 }
 
-.standardbutton a:hover{
-    color:#CF726B;
-    background-color: #FFFBE0;
 
-}
 
 .standardbutton:hover{
     color:#CF726B;
     background-color: #FFFBE0;
+    
 }
 
 
@@ -344,6 +340,7 @@ label.f{
     position:absolute;
     margin-left:970px;
     margin-top: 70px;
+    z-index: 1;
 }
 
 input#fusername{
@@ -436,7 +433,7 @@ input#fusername{
 
 }
 #babtn:hover{
-    background-color:#A7524B
+    background-color:#A7524B;
 }
 /*finish game page*/
 .endcontainer{
@@ -585,3 +582,49 @@ input#fusername{
     
     
 }
+
+/* passcode pop up*/
+.passcodecontainer{
+    display:flex;
+    flex-direction: column;
+    background-color: #CF726B;
+    width:40%;
+    position:absolute;
+    z-index:1;
+    border-radius: 15px;
+    height:40%;
+    padding:30px;
+}
+
+.ptext{
+    text-align: center;
+    color:#FAF6DF;
+    margin-bottom:60px;
+    font-size: 35px;
+    font-family: "Raleway";
+}
+
+#passcode{
+    width:90%;
+    
+    border-color: #793B36;
+
+    height:45px;
+   
+    border-radius: 10px;
+}
+
+.passcodesubmit{
+    width:18%;
+    margin-left:75%;
+    margin-top:50px;
+    border-radius:25px;
+    font-size:20px;
+    background-color: #FAF6DF;
+    padding:3px;
+    border:none;
+    color:#793B36;
+    font-family: "Raleway";
+    font-weight: 300;
+}
+
