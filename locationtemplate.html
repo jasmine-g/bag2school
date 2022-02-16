@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="normalise.css">
+        <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        
+        <title>Exploring NP</title>
+  </head>
+  <body>
+
+        <img src='photos/NP Building .png' class='campus' alt='NP campus'>
+        
+        <div id="menu" class="menu">
+            <a href="javascript:void(0)" class="close" onclick="closeMenu()">&times;</a>
+            <div class="menuitems">
+                <a href="checklist.html"><img id="checklist" src="photos/checklist.png"></a>
+                <a href="checklist.html">Checklist</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="map.html"><img id="map" src="photos/map.png"></a>
+                <a href="map.html">Map</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="scorebord.html"><img id="scoreimg" src="photos/scoreboard.png"></a>
+                <a href="Scoreboard">Scoreboard</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <div class="endgame">
+                    <a href="index.html" class="endbtn" style="color:#FFFBE0">End Game</a>
+                </div>
+            </div>
+        </div>
+        <span onclick="openMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </span>
+
+        <div class="progress1" style= "margin-top:100px;">
+            <img src="photos/progressbar.png" class="bar" alt="progress bar">
+            <img src = "photos/inbar.png" class="bar_in" alt="progress bar">
+           
+            <h3 class="amt">2/4</h3>
+            
+            <h3 class="text" style= "margin-left:25px;">Items <br>Collected </h3>
+        </div>
+
+
+        <div class="bubble" style="height:430px;" >
+            My swimming CCA mate just texted me saying 
+            I left my bag at the Sports Complex. Let's head
+            there now! The Sports Complex has a swimming
+            pool, indoor sports hall, large field, 
+            running track, gym and more! Many 
+            sport CCAs go there for their training 
+            sessions. You should definitely join my CCA!
+            However, if swimming is not for you, there are over
+            40 sports club and even 
+            more CCAs there are not sports related for you to explore!
+        </div>
+
+        <h2 class="quizT">Quiz</h2>
+        <form class="quiz">
+                    
+            <h3 class="top">Does Ngee Ann Poly have a fencing club?</h3>
+            <input type="radio" id="FCyes" name="fencing club" value="yes">
+            <label for="FCyes">Yes</label><br>
+            <input type="radio" id="FCno" name="fencing club" value="no">
+            <label for="FCno">No</label><br>
+            <h3>How many lanes does the running track at the Sports Complex have?</h3>
+            <input type="radio" id="RT6" name="Running Track" value="6">
+            <label for="RT6">6</label><br>
+            <input type="radio" id="RT8" name="Running Track" value="8">
+            <label for="RT8">8</label><br>
+            <input type="radio" id="RT4" name="Running Track" value="4">
+            <label for="RT8">4</label><br>     
+
+        </form>
+
+        <div class="placename"></div>
+        
+        <div class="imageclue"></div>
+        
+        
+        <a href="https://www.np.edu.sg/studentlife/Pages/ccas.aspx" class="baans"><u style="padding-top:30px; color:#793B36">Click Here To Find Out More</u></a>
+        
+        <div class="reachbtn" >
+            <input type="button" id="babtn" value="Let's Go!" style="background-color:#CF726B; color:#FFFBE0;" onClick="refreshPageSports()">
+        </div>
+
+
+        <div class ='passcodecontainer'>
+            <label class ="ptext" for="passcode">Key in secret passcode</label>
+            <input type="text" id="passcode" required>
+            <input type="submit" class="passcodesubmit" value="Submit"  >
+        </div>
+
+
+
+        <div class="arrowbk">
+            <a href="template1.html"> <img src="photos/arrow.png" class="back" alt="back button" style="margin-top: 0px; "></a>
+            <h4 class="backt" style="margin-top: 10px; ">Back to start</h4>
+        </div>
+
+
+        <img src="photos/sportans.png" alt="poster on wall" id="ans">
+        <div class="cross" ></div>
+        
+
+        <div class="bg">
+            <div class="bubble" style="height:50px;" >
+                You have collected the bag!
+            </div>
+    
+            <div class="cross" style="display:block; background-color:#006370; top:20px; "></div>
+    
+            <img src="photos/ray5.png" class="rays" alt="light rays" >
+            <h3 class="amt" style="text-align:center; font-size: 70px; margin-left:50%;margin-top: 0px;position: absolute;top:48%;left:22%;">2/5</h3>
+            <h3 class="text" style= " font-size:40px;left:75%;text-align: right; margin-top: 0px; position:absolute;top:50%;">Items <br>Collected </h3>
+            <img src = "photos/pen.png" style="position:absolute;left:25%;top:17%;">
+        </div>
+        
+        
+
+        
+        
+
+
+
+
+
+
+  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+  </body>
+</html>
+
