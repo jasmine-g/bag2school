@@ -1,5 +1,6 @@
 body{
     background-color: #FFFBE0;
+    position: relative;
 }
 .title{
     text-align: center;
@@ -144,7 +145,7 @@ form{
 label{
     font-family: 'Raleway', sans-serif;
 }
-h2{
+.question{
     text-align: center;
     color:#006370;
     font-size: 100px;
@@ -221,7 +222,7 @@ input.submit1{
     width: 550px;
     height: 300px;
     border-radius: 50px;
-    margin-left:40%;
+    margin-left:50%;
     margin-right: auto;
 
 
@@ -238,7 +239,7 @@ input.submit1{
     border-style: solid;
     border-width: 0 0 76px 80px;
     border-color: transparent transparent #D9A6A2 transparent;
-    top: 20%;
+    top: 24%;
     left: -35px;
     margin-top: -28px;
     
@@ -285,6 +286,7 @@ a{
 .arrowbk{
     display:flex;
     flex-direction:arrow;
+    margin-top: 80px;
    
 }
 .back{
@@ -298,6 +300,7 @@ a{
     font-size:20px;
     font-family: "Raleway",Arial, Helvetica, sans-serif;
     color:#793B36;
+    
     margin-top:75px;
 }
 
@@ -326,6 +329,7 @@ input.submit2{
     font-size:15px;
     margin-left: 900px;
     margin-top: 50px;
+    margin-bottom:100px;
 }
 
 label.f{
@@ -343,53 +347,94 @@ label.f{
     z-index: 1;
 }
 
-input#fusername{
-    width:250px;
-    
-    border-color: #793B36;
-
-    height:35px;
-   
-    border-radius: 5px;
+.inputs{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 
 
 /*schools section*/
-.menu{
-    display:inline-block;
-    cursor:pointer;
+.schdropbtn {
+    background-color: #3498DB;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
-.line1, .line2, .line3{
-    width:35px;
-    height:5px;
-    background-color: #006370;
-    margin:6px 0;
-    transition: 0.4s;
+  
+.schdropbtn:hover, .schdropbtn:focus {
+    background-color: #2980B9;
 }
-.change .line1 {
-    /*-webkit-transform:rotate(45deg) translate(-9px, 6px);*/
-    transform: rotate(45deg) translate(-9px, 6px);
+  
+.schdropdown {
+    position: relative;
+    display: inline-block;
 }
-.change .line2{
-    opacity: 0;
+  
+.schdropitems {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
 }
-.change .line3{
-    /*-webkit-transform:rotate(45deg) translate(-8px, -8px);*/
-    transform: rotate(45deg) translate(-8px, -8px);
+  
+.schdropitems a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
-.schlogos{
-    width:30px;
-    height:30px;
+  
+.schdropdown a:hover {background-color: #ddd;}
+  
+.show {display: block;}
+
+.noitemscollected{
+    display:flex;
+    align-items: flex-end;
+    justify-content:end;
+}
+#noitemscollected{
+    color:#006370;
+    font-size: 40px;
+
+}
+.speachbubble{
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 .dropdown{
     display:flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+}
+#dropdownMenuButton{
+    background-color: white;
+    color:#870F06;
+    border:none;
+    width:460px;
 }
 .dropdown-menu{
-    width:100%;
+    width:460px;
 }
+#schlogo{
+    width:40px;
+    height: 35px;
+    float:right;
+    
+}
+.school a{
+    padding:20px;
+}
+
+
 
 /*business section*/
 .schoolicon{
@@ -402,15 +447,18 @@ input#fusername{
     justify-content:center;
     align-items: center;
 }
-.reveal{
+
+
+.baans{
+    font-size:20px;
+    color: #006370;
     display:flex;
     justify-content:center;
     align-items: center;
     margin:10px;
-}
-.baans{
-    font-size:20px;
-    color: #006370;
+    margin-bottom: 30px;
+    font-family: "Raleway";
+    font-weight: 600;
 }
 .reachbtn{
     display:flex;
@@ -430,12 +478,25 @@ input#fusername{
     text-decoration: none;
     border:none;
     font-size:20px;
+    font-weight: 600;
+    
 
 }
 #babtn:hover{
     background-color:#A7524B;
+    
 }
-/*finish game page*/
+
+.baclue{
+    display: flex;
+    justify-content: center;
+    width:50%;
+    
+
+}
+
+
+/*END GAME*/
 .endcontainer{
     display: flex;
     background-image:url(photos/confetti.png)
@@ -519,73 +580,31 @@ input#fusername{
     margin-right: 90%;
     margin-left:500px;
 }
-/*QUIZ TEMPLAE*/
-.quizbtn{
+.cameraimg{
     display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:10px;
-}
-#quizsubbtn{
-    border-radius:30px;
-    padding-left:50px;
-    padding-right:50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #793B36;
-    color:#FAF6DF;
-    font-family: "Raleway",Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    border:none;
-    font-size:20px;
-}
-.quiztitle{
-    text-align: center;
-    font-family: "Raleway",Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    color: #2D3463;
-    margin:0px;
-}
-.quizbubble {
-
+    margin-right: 90%;
     position: relative;
-    background:#D9A6A2;
-    color:#FFFBE0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 28px;
-    line-height: 35px;
-    text-align: center;
-    width: 500px;
-    height: 150px;
-    border-radius: 50px;
-    margin-left:40%;
-    margin-right: auto;
-
-
-    padding:35px;
-    margin-top: 30px;
-   
 }
-
-.quizbubble:after {
-    content: '';
+#camimg{
+    z-index:1;
     position: absolute;
-    display: block;
-    width: 0;
-    z-index: 1;
-    border-style: solid;
-    border-width: 0 0 76px 80px;
-    border-color: transparent transparent #D9A6A2 transparent;
-    top: 20%;
-    left: -35px;
-    margin-top: -28px;
-    
-    
 }
+.endbackground{
+    display:flex;
+    align-items:center ;
+    justify-content:center ;
+    position: relative;
+}
+#confetti{
+    z-index: -10;
+    position:absolute;
+}
+
+
 
 /* passcode pop up*/
 .passcodecontainer{
-    display:flex;
+    display:none;
     flex-direction: column;
     background-color: #CF726B;
     width:40%;
@@ -594,6 +613,24 @@ input#fusername{
     border-radius: 15px;
     height:40%;
     padding:30px;
+    top:30%;
+    left:30%;
+    
+}
+
+.passcodecontainer{
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
 }
 
 .ptext{
@@ -601,7 +638,9 @@ input#fusername{
     color:#FAF6DF;
     margin-bottom:60px;
     font-size: 35px;
-    font-family: "Raleway";
+    font-family: "Raleway" Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
 }
 
 #passcode{
@@ -612,6 +651,7 @@ input#fusername{
     height:45px;
    
     border-radius: 10px;
+
 }
 
 .passcodesubmit{
@@ -625,6 +665,312 @@ input#fusername{
     border:none;
     color:#793B36;
     font-family: "Raleway";
+    font-weight: 600;
+}
+
+/* location template*/
+.progress1{
+    display:flex;
+    flex-direction: column;
+    
+    position:absolute;
+    padding:20px; 
+    
+    margin-top:200px;
+
+}
+
+.bar{
+    width:70px;
+    margin-left:27px;
+}
+
+.bar_in{
+    width:24px;
+    height:50px;
+    position: absolute;
+    z-index:1;
+    left:44px;
+    top:255px;
+    margin-left: 27px;
+
+
+}
+
+.text{
+    text-align:center;
+    margin-top:0;
+    
+    color:#066370;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+ 
+    
+}
+.amt{
+    margin-bottom: 0px;
+    margin-left:28px;
+    font-size:45px;
+    color:#066370;
+    font-family: "Lucida Sans",Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+.placename{
+    color:#793B36;
+    font-family:"Raleway",Arial, Helvetica, sans-serif; 
+   text-align: center;
+   font-size: 40px;
+   margin-top:50px;
+   margin-right:400px;
+   font-weight: 100px;
+}
+
+/*NAV MENU*/
+.menu {
+    height: 100%;
+    width: 0;
+    position: fixed; 
+    z-index: 2;
+    left: 0;
+    top: 0;
+    background-color: #FAF6DF;
+    overflow-x: hidden; 
+    transition: 0.5s;
+  }
+  
+  .menuitems {
+    position: relative;
+    top: 25%; 
+    width: 100%; 
+    text-align: center; 
+    margin-top: 30px; 
+  }
+  
+  .menu a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #870F06;
+    display: block; 
+    transition: 0.3s; 
+  }
+  
+  .menu a:hover, .menu a:focus {
+    color: #A7524B
+  }
+  
+ 
+  .menu .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .menu a {font-size: 20px}
+    .menu .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+.line{
+    width: 50px;
+    height: 5px;
+    background-color: #006370;
+    margin: 6px 0;
+    margin-left:30px;
+}
+.close{
+    color:#006370;
+}
+.endgame{
+    display:flex;
+    justify-content:flex-end ;
+    align-items: flex-end;
+    color:#FAF6DF;
+    
+    
+}
+.endbtn{
+    border-radius:10px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #793B36;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-weight:600;
+    text-decoration: none;
+    border:none;
+    font-size:20px;
+    margin: 10px;
+}
+.endbtn:hover{
+    background-color: #A7524B;
+}
+.menugrp{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#menuline{
+    color:#870F06;
+    width:10%;
+}
+.menuimg{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#checklist{
+    top:40%;
+}
+
+.linebg{
+    display: none;
+}
+
+.checkbox{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    z-index:5;
+    width:30%;
+    top:280px;
+    left:30%;
+}
+.square{
+    width:80px;
+    height:80px;
+    background-color: #FFFBE0;
+    border-color: #2D3463;
+    border-width: 3px;
+    margin-bottom: 70px;
+    border-style: solid;
+    
+   
+}
+
+.list h3{
+    text-align: left;
+    margin-bottom: 100px;
+    color:#2D3463;
     font-weight: 300;
 }
 
+.list{
+    position:absolute;
+    top:305px;
+    left:40%;
+    font-size: 40px;
+    display:none;
+    
+
+}
+/* reveal ans*/
+img#ans{
+    width:100%;
+    margin-top: 20px;
+    display:none;
+    
+}
+
+.cross{
+    background-color:#793B36;
+    
+    position:absolute;
+    z-index:1;
+    top:5%;
+    width:70px;
+    height:70px;
+    margin-left:50px;
+    top:100%;
+    display:none;
+    
+  
+}
+
+.cross:before, .cross:after {
+    position: absolute;
+    
+    left: 34px;
+    content: ' ';
+    height: 70px;
+    width: 5px;
+    background-color: #ffff;
+  }
+  .cross:before {
+    transform: rotate(45deg);
+  }
+  .cross:after {
+    transform: rotate(-45deg);
+  }
+
+/* quiz portion*/
+.quiz{
+    display:none;
+    
+    background-color:white;
+    width:40%;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius:20px;
+    box-shadow: 6px 10px 5px rgba(0,0,0,0.3);
+    color:#2D3463;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+}
+  
+.quizT{
+ text-align: center;
+ font-family: "Raleway",Arial, Helvetica, sans-serif;
+ font-size:40px;
+ color:#2D3463;
+ display: none;
+}
+.quiz label{
+    color:#2D3463;
+    
+
+
+}
+
+.top{
+    margin-top:0;
+}
+
+/* collection*/
+.rays{
+    width:40%;
+    position:absolute;
+    top:2%;
+    left:10%;
+    width:80%;
+    animation-name: example;
+    animation-duration: 2s;
+    z-index: -1;
+}
+
+@keyframes example {
+  0% {transform: rotate(0deg);}
+  
+  100%{transform: rotate(360deg);width:80%;left:10%;}
+  
+  
+
+  
+}
+
+.bg{
+    display:none;
+    position:absolute;
+    z-index: 1;
+    height:100%;
+    width:100%;
+    background-color:#FFFBE0;
+    top:0px;
+    justify-items: baseline;
+    
+}
