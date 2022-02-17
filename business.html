@@ -5,31 +5,82 @@
         <meta name="viewport" content="width=device-width">
         <link href="style.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="normalise.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
-        <title>Exploring NP</title>
+        <title></title>
     </head>
-    <body>
-        <div class="menu" class="container" oneclick="menufunction(x)">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
+    <body style="background-color:#FFFBE0">
+        <div id="menu" class="menu">
+            <a href="javascript:void(0)" class="close" onclick="closeMenu()">&times;</a>
+            <div class="menuitems">
+                <a href="checklist.html"><img id="checklist" src="photos/checklist.png"></a>
+                <a href="checklist.html">Checklist</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="map.html"><img id="map" src="photos/map.png"></a>
+                <a href="map.html">Map</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="scorebord.html"><img id="scoreimg" src="photos/scoreboard.png"></a>
+                <a href="Scoreboard">Scoreboard</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <div class="endgame">
+                    <a href="index.html" class="endbtn" style="color:#FFFBE0">End Game</a>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="schoolicon">
-            <img src="photos/schoollogo.png" width="100px" height="100px" class="businessicon">
+        <span onclick="openMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </span>
+        <div class="progress1">
+            <img src="photos/progressbar.png" class="bar" alt="progress bar">
+            <img src = "photos/inbar.png" class="bar_in" alt="progress bar">
+           
+            <h3 class="amt">0/5</h3>
+            
+            <h3 class="text">Items <br>Collected </h3>
         </div>
-        <br>
-        <br>
+
+
+        <div class="bubble" style="height:250px;" >
+            Here are some clues about where the passcode is!
+            <ol>
+                <li>It is near a staircase</li>
+                <li>It is pasted on a grey surface</li>
+                <li>It is on a slope</li>
+            </ol>
+        </div>
         <div class="imageclue">
             <img src="photos/businessclue.png" class="baclue">
         </div>
         <br>
         <div class="reveal">
-            <a href="photos/revealansBA.png" class="baans"><u>Reveal Answer</u></a>
+            <a href="#ans" class="baans"><u>Reveal Answer</u></a>
         </div>
         <div class="reachbtn" >
             <input type="button" id="babtn" value="I'm Here!">
         </div>
+        
+        <img src="photos/revealansBA.png" alt="poster on wall" id="ans">
+        <div class="cross" ></div>
+        
+        
+        <img class="campus" src="photos/NP Building .png">
+        
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
