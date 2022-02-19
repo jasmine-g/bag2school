@@ -6,13 +6,31 @@
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
 <style>
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+#fit {
+display: block;
+position: relative;
+margin: 0px auto;
+width: 50%;
+height: 40px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+font-size: 20px;
+text-align: center;
+color:#FFFBE0 ;
+background: #793B36;
+font-family: "Raleway";
+}
 </style>
 </head>
 <body>
 <div id="map"></div>
+<br>
+<button id="fit">Fit to Ngee Ann Polytechnic</button>
 <script>
 	// TO MAKE THE MAP APPEAR YOU MUST
 	// ADD YOUR ACCESS TOKEN FROM
@@ -32,13 +50,14 @@ body { margin: 0; padding: 0; }
 // Load an image from an external URL.
 map.loadImage(
 'photos/schoollogo.png', 
+
 (error, image) => {
 if (error) throw error;
 
  
 // Add the image to the map style.
 map.addImage('BA', image);
-map.addImage('ICT', image);
+
  
 // Add a data source containing one point feature.
 map.addSource('point', {
@@ -71,13 +90,349 @@ map.addLayer({
 }
 });
 
+}
+);
+});
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/ict.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('ICT', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point2', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [103.77521102042574,1.3344110333832981]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points2',
+'type': 'symbol',
+'source': 'point2', // reference the data source
+'layout': {
+'icon-image': 'ICT', // reference the image
+'icon-size': 0.3
+}
+});
+
+}
+);
+});
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/soe.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('SOE', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point3', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [103.7743587161088,1.3320859799678084]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points3',
+'type': 'symbol',
+'source': 'point3', // reference the data source
+'layout': {
+'icon-image': 'SOE', // reference the image
+'icon-size': 0.2
+}
+});
 
 
 }
 );
 });
 
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/fms.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('FMS', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point4', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
     
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [103.77530574797247,1.3318533465583449]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points4',
+'type': 'symbol',
+'source': 'point4', // reference the data source
+'layout': {
+'icon-image': 'FMS', // reference the image
+'icon-size': 0.25
+}
+});
+
+
+}
+);
+});
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/hms.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('HMS', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point5', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [103.77504356896912,1.3315113699785717]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points5',
+'type': 'symbol',
+'source': 'point5', // reference the data source
+'layout': {
+'icon-image': 'HMS', // reference the image
+'icon-size': 0.25
+}
+});
+
+
+}
+);
+});
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/hs.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('HS', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point6', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [ 103.77428520394221,1.3302495659411049]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points6',
+'type': 'symbol',
+'source': 'point6', // reference the data source
+'layout': {
+'icon-image': 'HS', // reference the image
+'icon-size': 0.2
+}
+});
+
+
+}
+);
+});
+    
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/isct.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('ISCT', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point7', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [ 103.77490189332893,1.3306262776232527]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points7',
+'type': 'symbol',
+'source': 'point7', // reference the data source
+'layout': {
+'icon-image': 'ISCT', // reference the image
+'icon-size': 0.2
+}
+});
+
+}
+);
+});
+
+map.on('load', () => {
+// Load an image from an external URL.
+map.loadImage(
+'photos/design.png', 
+(error, image) => {
+if (error) throw error;
+
+ 
+// Add the image to the map style.
+
+map.addImage('DE', image);
+ 
+// Add a data source containing one point feature.
+map.addSource('point8', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+{
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [ 103.774125760712,1.333663814270164 ]
+        },
+    },
+
+
+]
+}
+});
+ 
+// Add a layer to use the image to represent the data.
+map.addLayer({
+'id': 'points8',
+'type': 'symbol',
+'source': 'point8', // reference the data source
+'layout': {
+'icon-image': 'DE', // reference the image
+'icon-size': 0.2
+}
+});
+}
+);
+});
+
+document.getElementById('fit').addEventListener('click', () => {
+map.fitBounds([
+[ 103.777409,1.331831], // southwestern corner of the bounds
+[ 103.771144,1.332478] // northeastern corner of the bounds
+]);
+});
 </script>
 
 </body>
