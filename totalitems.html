@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    </head>
+    <body style="background-color:#FFFBE0">
+        <div id="menu" class="menu">
+            <a href="javascript:void(0)" class="close" onclick="closeMenu()">&times;</a>
+            <div class="menuitems">
+                <a href="checklist.html"><img id="checklist" src="photos/checklist.png"></a>
+                <a href="checklist.html">Checklist</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="map.html"><img id="map" src="photos/map.png"></a>
+                <a href="map.html">Map</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <br>
+                <br>
+                <a href="scorebord.html"><img id="scoreimg" src="photos/scoreboard.png"></a>
+                <a href="Scoreboard">Scoreboard</a>
+                <div class="menugrp">
+                    <hr id="menuline">
+                </div>
+                <div class="endgame">
+                    <a href="index.html" class="endbtn" style="color:#FFFBE0">End Game</a>
+                </div>
+            </div>
+        </div>
+        <span onclick="openMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </span>
+        <div class="nextpg">
+            <input type="button" id="next-totalp" class="endpgbtn" value="Next">
+        </div>
+    
+        <div class="bubble" style="height:190px;">
+            Thank you for your help today!<br>Hope you enjoyed exploring NP as much as i enjoyed showing you around
+        </div>
+        <br>
+        <div class="earned">
+            <div class="textearned">
+                <p id="textearn"><b>You Have Earned...</b></p>
+            </div>
+            <div id="pointsearned">
+                <p id="textpoints"><b>100</b></p>
+                <img src="photos/star.png">
+            </div>
+            <div class="endbackground">
+                <img id="confetti" src="photos/confetti1.png">
+            </div>
+        </div>  
+        <div class="scorepopup">
+            <div id="scorepopup">
+                <div class="boarditems">
+                    <div class="scoreboardh">
+                        <p id="scoretitle">Scoreboard</p>
+                    </div>
+                </div>       
+            </div>
+        </div>  
+        <div class="itemsdisplay">
+            <img id="podium" src="photos/itemspodium.png">
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script2.js"></script>
+    </body>
+</html>
