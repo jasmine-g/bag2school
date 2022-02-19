@@ -30,7 +30,7 @@ body{
     opacity: 0.5;
 }
 
-.line{
+.line1{
     background-color:#006370;
     font-size: 3px;
     color:#006370;
@@ -55,8 +55,8 @@ body{
 }
 
 .startbutton:hover{
-    color:#CF726B;
-    background-color: #FFFBE0;
+    
+    background-color: #E99690;
 }
 
 .logos{
@@ -92,6 +92,7 @@ body{
     top:5%;
     z-index: -2;
 }
+
 
 .intro{
     text-align: center;
@@ -210,6 +211,12 @@ input.submit1{
 
 /* template 1 portion */
 
+.janice{
+    position: absolute;
+    width:70%;
+    left:30px;
+}
+
 .bubble {
 
     position: relative;
@@ -222,7 +229,7 @@ input.submit1{
     width: 550px;
     height: 300px;
     border-radius: 50px;
-    margin-left:50%;
+    margin-left:45%;
     margin-right: auto;
 
 
@@ -259,7 +266,7 @@ input.submit1{
     padding-left:70px;
     padding-right:70px;
  
-    margin-top: 150px;
+    margin-top: 230px;
     background-color: #CF726B;
     font-size:30px;
     border-radius: 50px;
@@ -277,8 +284,8 @@ a{
 
 
 .standardbutton:hover{
-    color:#CF726B;
-    background-color: #FFFBE0;
+   
+    background-color: #E99690;
     
 }
 
@@ -286,14 +293,14 @@ a{
 .arrowbk{
     display:flex;
     flex-direction:arrow;
-    margin-top: 80px;
+    
    
 }
 .back{
     margin-left:50px;
    margin-right:20px;
     width:40px;
-    margin-top:65px;
+    margin-top: 15px;
 }
 
 .backt{
@@ -301,7 +308,8 @@ a{
     font-family: "Raleway",Arial, Helvetica, sans-serif;
     color:#793B36;
     
-    margin-top:75px;
+    
+   
 }
 
 /* friend username section*/
@@ -356,45 +364,71 @@ label.f{
 
 
 /*schools section*/
-.schdropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-  
-.schdropbtn:hover, .schdropbtn:focus {
-    background-color: #2980B9;
-}
-  
-.schdropdown {
+.schbackground{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    display: inline-block;
 }
-  
-.schdropitems {
-    display: none;
+#building{
+    z-index: -10;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
 }
-  
-.schdropitems a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-.schdropdown a:hover {background-color: #ddd;}
-  
-.show {display: block;}
 
+.dropbtn{
+    background-color: white;
+    color:#870F06;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top: 8px;
+    padding-bottom: 10px;
+    border:none;
+    border-radius: 10px;
+    font-size:20px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    width:630px;
+}
+#dropicon{
+    margin-left:3px;
+    margin-right:3px;
+    margin-bottom: 0px;
+}
+.schooldropdownmenu{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+.dropdown-content{
+    display:none;
+    position: absolute;
+    background-color: white;
+    min-width:630px;
+    overflow: auto;
+    z-index:1;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size:18px;
+}
+.dropdown-content a{
+    text-decoration:none;
+    color:#870F06;
+    background-color: white;
+    display:block;
+    padding:5px;
+    height:40px;
+}
+.dropdown-content a:hover{
+    background-color: #E5E5E5;
+}
+#schdrop{
+    color:#870F06;
+}
+.show{
+    display:block;
+}
 .noitemscollected{
     display:flex;
     align-items: flex-end;
@@ -405,25 +439,13 @@ label.f{
     font-size: 40px;
 
 }
-.speachbubble{
+.speechbubble{
     display:flex;
     align-items: center;
     justify-content: center;
 }
-.dropdown{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-#dropdownMenuButton{
-    background-color: white;
-    color:#870F06;
-    border:none;
-    width:460px;
-}
-.dropdown-menu{
-    width:460px;
-}
+
+
 #schlogo{
     width:40px;
     height: 35px;
@@ -433,6 +455,35 @@ label.f{
 .school a{
     padding:20px;
 }
+.locationlink{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    margin-bottom:40px;
+}
+
+
+#clue{
+    display:none;
+}
+
+.imageclue{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin:40px;
+}
+.reveal{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    margin:10px;
+}
+
+
+
 
 
 
@@ -459,6 +510,7 @@ label.f{
     margin-bottom: 30px;
     font-family: "Raleway";
     font-weight: 600;
+    margin-top:70px;
 }
 .reachbtn{
     display:flex;
@@ -479,7 +531,7 @@ label.f{
     border:none;
     font-size:20px;
     font-weight: 600;
-    
+    margin-top: 100px;
 
 }
 #babtn:hover{
@@ -611,7 +663,7 @@ label.f{
     position:absolute;
     z-index:1;
     border-radius: 15px;
-    height:40%;
+    height:300px;
     padding:30px;
     top:30%;
     left:30%;
@@ -720,9 +772,10 @@ label.f{
     font-family:"Raleway",Arial, Helvetica, sans-serif; 
    text-align: center;
    font-size: 40px;
-   margin-top:50px;
+   margin-top:350px;
    margin-right:400px;
    font-weight: 100px;
+   display:none;
 }
 
 /*NAV MENU*/
@@ -744,9 +797,10 @@ label.f{
     width: 100%; 
     text-align: center; 
     margin-top: 30px; 
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
   }
   
-  .menu a {
+  .menu h3 {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
@@ -755,9 +809,7 @@ label.f{
     transition: 0.3s; 
   }
   
-  .menu a:hover, .menu a:focus {
-    color: #A7524B
-  }
+  
   
  
   .menu .close {
@@ -766,7 +818,8 @@ label.f{
     right: 45px;
     font-size: 60px;
   }
-  
+
+ 
   @media screen and (max-height: 450px) {
     .menu a {font-size: 20px}
     .menu .close {
@@ -780,7 +833,7 @@ label.f{
     height: 5px;
     background-color: #006370;
     margin: 6px 0;
-    margin-left:30px;
+    margin-left:55px;
 }
 .close{
     color:#006370;
@@ -806,7 +859,7 @@ label.f{
     text-decoration: none;
     border:none;
     font-size:20px;
-    margin: 10px;
+    margin: 40px;
 }
 .endbtn:hover{
     background-color: #A7524B;
@@ -817,8 +870,12 @@ label.f{
     justify-content: center;
 }
 #menuline{
-    color:#870F06;
+    
     width:10%;
+    background-color: #793B36;
+    border-style: solid;
+    border-color: #793B36;
+    
 }
 .menuimg{
     display:flex;
@@ -827,19 +884,60 @@ label.f{
 }
 #checklist{
     top:40%;
+    
+
 }
 
-.linebg{
-    display: none;
+.CLcontent{
+    display:none;
 }
+.tickk0{
+    position:absolute;
+    z-index:5;
+    top:370px;
+    left:33%;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.tickk1{
+   
+    position:absolute;
+    z-index:5;
+    top:527px;
+    left:33%;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+.tickk2{
+    
+    position:absolute;
+    z-index:5;
+    top:680px;
+    left:33%;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.tickk3{
+    
+    position:absolute;
+    z-index:5;
+    top:837px;
+    left:33%;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
 
 .checkbox{
-    display: none;
+    
     flex-direction: column;
     position: absolute;
     z-index:5;
     width:30%;
-    top:280px;
+    top:350px;
     left:30%;
 }
 .square{
@@ -863,13 +961,14 @@ label.f{
 
 .list{
     position:absolute;
-    top:305px;
+    top:370px;
     left:40%;
     font-size: 40px;
-    display:none;
-    
-
 }
+
+
+
+
 /* reveal ans*/
 img#ans{
     width:100%;
@@ -887,7 +986,7 @@ img#ans{
     width:70px;
     height:70px;
     margin-left:50px;
-    top:55%;
+    top:60%;
     display:none;
     
   
@@ -929,23 +1028,23 @@ img#ans{
  font-size:40px;
  color:#2D3463;
  display: none;
+ margin-top: 250px;
 }
 .quiz label{
     color:#2D3463;
-    
-
-
 }
 
 .top{
     margin-top:0;
 }
 
+
+
 /* collection*/
 .rays{
     width:40%;
     position:absolute;
-    top:2%;
+    top:4%;
     left:10%;
     width:80%;
     animation-name: example;
@@ -962,7 +1061,27 @@ img#ans{
 
   
 }
-
+.itemimg{
+    position:absolute;
+    left:27%;
+    top:17%;
+    width:40%;
+}
+.prizeText{
+    color:#FFFBE0;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size:40px;
+    text-align: center;
+    font-weight: bolder;
+    background-color: #006370;
+    box-shadow: 6px 10px 5px rgba(0,0,0,0.3);
+    margin-top: 30px;
+    width:500px;
+    margin-left: auto;
+    margin-right:auto;
+    padding:20px;
+    border-radius: 20px;
+}
 .bg{
     display:none;
     position:absolute;
@@ -974,3 +1093,303 @@ img#ans{
     justify-items: baseline;
     
 }
+
+.cross1{
+    background-color:#006370;
+    
+    position:absolute;
+    z-index:1;
+    top:5%;
+    width:70px;
+    height:70px;
+    margin-left:50px;
+    top:60%;
+    display:none;
+    top:20px
+  
+}
+
+.cross1:before, .cross1:after {
+    position: absolute;
+    
+    left: 34px;
+    content: ' ';
+    height: 70px;
+    width: 5px;
+    background-color: #ffff;
+  }
+  .cross1:before {
+    transform: rotate(45deg);
+  }
+  .cross1:after {
+    transform: rotate(-45deg);
+  }
+
+/*QUIZ POPUP*/
+.quizpopup{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.quizscore{
+    height:800px;
+    width:700px;
+    border-radius:30px;
+    border-color:#006370;
+    background-color: #FAF6DF;
+    border-width:30px;
+    border-style: solid;
+    display:none;
+    flex-direction: column;
+    position:absolute;
+    z-index:1;
+    display: flex;
+}
+.quizscore{
+    -webkit-animation:fadeIn 1s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn{
+    from{ opacity: 0;}
+    to {opacity: 1;;}
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    toi {opacity:1};
+}
+.quizh{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#quiztitle{
+    font-family: 'Modak',Arial, Helvetica, sans-serif;
+    color:#006370;
+    font-size: 70px;
+    border:none;
+    margin-top:10px;
+    text-align: center;
+}
+.quizresult{
+    background-color: #FAF4C7;
+    color:#870F06;
+    width:60%;
+    height:230px;
+    border-radius: 20px;
+    margin:auto;
+    text-align: center;
+    box-shadow:#E5E1C9 10px 10px 5px;
+}
+#quizresulth{
+    font-size:60px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    margin-bottom:20px;
+    
+}
+#quizresult{
+    font-size:100px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    margin:0;
+}
+.quizpoints{
+    background-color: #FAF4C7;
+    color:#870F06;
+    width:60%;
+    height:230px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    box-shadow:#E5E1C9 10px 10px 5px;
+    margin-top:80px;
+    
+}
+#points{
+    font-size: 100px;
+    margin:0;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    z-index: 2;
+    top:-10px;
+}
+#stars{
+    width:60%;
+    height:80px;
+}
+.quizbtn{
+    display:flex;
+    align-items: flex-end;
+    justify-content:end ;
+}
+#quizbtn{
+    background-color: #793B36;
+    color:#FAF4C7;
+    padding-left:50px;
+    padding-right: 50px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 30px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin-top: 40px;
+    border-style: none;
+    margin-right: 10px;
+}
+#quizbtn:hover{
+    background-color: #A7524B;
+}
+
+/*TOTAL ITEMS*/
+/*TOTAL ITEMS + POINTS*/
+.earned{
+    display:block;
+    background-color: #FAF6DF;
+    width:700px;
+    height:300px;
+    margin:auto;
+}
+.textearned{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+#textearn{
+    color:#DC7273;
+    font-size: 50px;
+}
+#pointsearned{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#textpoints{
+    color:#DC7273;
+    font-size: 70px;
+}
+.nextpg{
+    display:flex;
+    align-items: flex-end;
+    justify-content: end;
+    padding-right:5px;
+}
+#next-totalp{
+    border-radius:10px;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #BD5859;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border:none;
+    font-size:25px;
+    margin: 10px;
+}
+.scorepopup{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#scorepopup{
+    height:800px;
+    width:700px;
+    border-radius:30px;
+    border-color:#006370;
+    background-color: #FAF6DF;
+    border-width:40px;
+    border-style: solid;
+    display:none;
+    flex-direction: column;
+    position:absolute;
+    z-index:1;
+
+}
+.scoreboard{
+    -webkit-animation:fadeIn 1s;
+    animation: fadeIn 1s;
+}
+@-webkit-keyframes fadeIn{
+    from{ opacity: 0;}
+    to {opacity: 1;;}
+}
+@keyframes fadeIn{
+    from{opacity: 0;}
+    toi {opacity:1};
+}
+.scoreboardh{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+#scoretitle{
+    font-family: 'Modak',Arial, Helvetica, sans-serif;
+    color:#006370;
+    font-size: 60px;
+}
+.itemsdisplay{
+    display:flex;
+    align-items:baseline;
+    justify-content: baseline;
+    bottom:0px;
+    position: relative;
+    margin-top:400px;
+    margin-left:25%;
+}
+
+@media screen{
+
+}
+
+#podium{
+    bottom:0px;
+    position: sticky;
+}
+.mapiconText{
+    position:absolute;
+}
+
+/*map*/
+#fit {
+    display: none;
+    position: relative;
+    
+    margin: 0px auto;
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    text-align: center;
+    color:#FFFBE0 ;
+    background: #793B36;
+    font-family: "Raleway";
+    
+    
+    }
+
+    #map { 
+        position: absolute;
+        z-index:-1;
+        top: 0;
+        bottom: 0; 
+        width: 3000px; 
+        height:1000px;
+        visibility:hidden;
+        
+        
+    }
+
+    .two h3{
+        position:relative;
+        left:0%;
+    }
+
+    .two img{
+        position:relative;
+        left:0%;
+    }
