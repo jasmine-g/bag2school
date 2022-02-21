@@ -19,10 +19,10 @@
             <a href="javascript:void(0)" class="close" onclick="closeMenu()">&times;</a>
             <div class="menuitems">
                 <div class="one">
-                    <img id="checklist" src="photos/checklist.png">
+                    <img class="checklist" src="photos/checklist.png">
                     <h3>Checklist</h3>
                     <div class="menugrp">
-                        <hr id="menuline">
+                        <hr class="menuline">
                     </div>
                 </div>
 
@@ -49,11 +49,11 @@
                 <br>
                 <div class="two">
                     
-                    <img id="mapicon" src="photos/map.png">
+                    <img class="mapicon" src="photos/map.png">
                         
                     <h3>Map</h3>
                     <div class="menugrp">
-                        <hr id="menuline">
+                        <hr class="menuline">
                     </div>
                     
                     
@@ -65,10 +65,59 @@
                 <br>
                 <br>
                 <div class="three">
-                    <a href="scorebord.html"><img id="scoreimg" src="photos/scoreboard.png"></a>
+                    <img class="scoreimg" src="photos/scoreboard.png">
                     <h3>Scoreboard</h3>
                     <div class="menugrp">
-                        <hr id="menuline">
+                        <hr class="menuline">
+                    </div>
+                    <div id="scorepopup">
+                        <div class="boarditems">
+                                <div class="scoreboardh">
+                                    <img id="scoretitle" src="photos/scoeboardstarright.png"style="padding-top:0px;">
+                                    <p id="scoretitle"><u>Scoreboard</u>
+                                    <img id="scoretitle" src="photos/scoreboardstarleft.png">
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="firstposcontent">
+                                        <p class="winnercontent">1.</p>
+                                        <p class="winnercontent" class="winnerid">Jasmine</p>
+                                        <div class="pointnstar">
+                                            <p class="scoreboardpoints1">20 <img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="runnerupcontent">
+                                        <p class="winnercontent">2.</p>
+                                        <p class="winnercontent" class="secondid">Janel</p>
+                                        <div class="pointnstar">
+                                        <p class="scoreboardpoints2">5<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="runnerupcontent">
+                                        <p class="winnercontent">3.</p>
+                                        <p class="winnercontent" class="thirdid">Tom</p>
+                                        <div class="pointnstar" class="winnercontent">
+                                            <p class="scoreboardpoints3">20<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="runnerupcontent">
+                                        <p class="winnercontent">4.</p>
+                                        <p class="winnercontent" class="fourthid">Jessica</p>
+                                        <div class="pointnstar" class="winnercontent">
+                                            <p class="scoreboardpoints4">5<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scoreboardf">
+                                    <img src="photos/friendpoints.png" class="friendcirclepts">
+                                    <input type="button" id="popupbtn" value="Next" onClick="endPage()"class="scorenextbtn">
+                                </div>
+                        </div>       
                     </div>
                 </div>
                 <div class="endgame">
@@ -137,7 +186,7 @@
         <div class="reachbtn" >
             <input type="button" id="babtn" value="Let's Go!" style="background-color:#CF726B; " onClick="refreshPageMakanPlace()">
         </div>
-
+    
 
         <div class ='passcodecontainer'>
             <label class ="ptext" for="passcode">Key in secret passcode</label>
@@ -145,6 +194,29 @@
             <input type="submit" class="passcodesubmit" value="Submit"   >
         </div>
 
+        <div class="quizpopup">
+            <div class="quizscore" id="quizscore">
+                <div class="quizitems">
+                    <div class="quizh">
+                        <p class="quiztitle">Congratulations</p>
+                    </div>
+                    <div class="quizresult">
+                        <p class="quizresulth">QUIZ SCORE</p>
+                        <p id="quizresult"></p>
+                    </div>
+                    <div class="quizpoints">
+                        <img class="stars" src="photos/quizstars.png">
+                        <p id="totalpoints4sect">+15</p>
+                    </div>
+                    <div class="popupnextbtn">
+                        <input type="button" class="popupbtn" value="Next" onClick="collectItem2()">
+                    </div>
+                </div>       
+            </div>
+        </div>
+
+        <img src="photos/MPans.png" alt="poster on wall" id="ans">
+        <div class="cross" ></div>
 
 
         <div class="arrowbk">
@@ -153,8 +225,7 @@
         </div>
 
 
-        <img src="photos/MPans.png" alt="poster on wall" id="ans">
-        <div class="cross" ></div>
+        
         
 
         <div class="bg">
@@ -163,15 +234,17 @@
                 YOU HAVE COLLECTED <br>THE LUNCHBOX!
             </div>
     
-            <div class="cross1" style="display:block; background-color:#006370; top:20px;" onclick="refreshPageSports1()"></div>
+           <div class="cross1" style="display:block; background-color:#006370; top:20px;" onClick="refreshPageSports1()"></div>
     
             <img src="photos/ray5.png" class="rays" alt="light rays" >
             <h3 class="amt" style="text-align:center; font-size: 70px; margin-left:55%;margin-top: 60px;position: absolute;top:48%;left:22%;"> 2/4</h3>
             <h3 class="text" style= " font-size:40px;left:80%;text-align: right; margin-top: 70px; position:absolute;top:50%;">Items <br>Collected </h3>
             <img src = "photos/lunchbox.PNG"  class="itemimg" alt="Lunchbox">
         </div>
+
         
-        
+        <input type="button" value="friends?" id="hi">
+        <div id="fname"></div>
 
         
         
