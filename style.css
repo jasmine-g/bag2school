@@ -796,7 +796,7 @@ label.f{
  
   .menu .close {
     position: absolute;
-    top: 30px;
+    top: 40px;
     right: 45px;
     font-size: 60px;
   }
@@ -1388,7 +1388,7 @@ img#ans{
 #fit {
     display: none;
     position: relative;
-    
+    margin-top:0;
     margin: 0px auto;
     width: 50%;
     height: 40px;
