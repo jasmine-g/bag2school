@@ -4,33 +4,69 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
         <link href="style.css" rel="stylesheet" type="text/css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     </head>
-    <body>
-        div id="menu" class="menu">
+    <body style="background-color:#FFFBE0">
+        <div id="menu" class="menu">
             <a href="javascript:void(0)" class="close" onclick="closeMenu()">&times;</a>
             <div class="menuitems">
-                <a href="checklist.html"><img id="checklist" src="photos/checklist.png"></a>
-                <a href="checklist.html">Checklist</a>
-                <div class="menugrp">
-                    <hr id="menuline">
+                <div class="one">
+                    <img class="checklist" src="photos/checklist.png">
+                    <h3>Checklist</h3>
+                    <div class="menugrp">
+                        <hr class="menuline">
+                    </div>
+                </div>
+
+                <div class="CLcontent">
+                        <div class="endbtn" style="width:50px; margin-left:70%;" onClick="back()">Back</div>
+                        <img src = "photos/lines.png" class="linebg" alt="line background">
+                        <div class="checkbox">
+                            <div class="square"></div>
+                            
+                            <div class="square"></div>
+                            <div class="square"></div>
+                            <div class="square"></div>
+                        </div>
+                        <div class = "list">
+                            <h3 class="text">Pen</h3>
+                            <h3 class="text">Lunch Box</h3>
+                            <h3 class="text">Bag</h3>
+                            <h3 class="text">Charger</h3>
+                        </div>
+                        
+                        
                 </div>
                 <br>
                 <br>
-                <a href="map.html"><img id="map" src="photos/map.png"></a>
-                <a href="map.html">Map</a>
-                <div class="menugrp">
-                    <hr id="menuline">
+                <div class="two">
+                    
+                    <img class="mapicon" src="photos/map.png">
+                        
+                    <h3>Map</h3>
+                    <div class="menugrp">
+                        <hr class="menuline">
+                    </div>
+                    
+                    
+                    <div id="map"></div>
+                    <br>
+                    <button id="fit">Fit to Ngee Ann Polytechnic</button>
+                    <div class="endbtn" style="width:50px;left:80%; top:5%; display:none; position:absolute" onClick="back2()">Back</div>
                 </div>
                 <br>
                 <br>
-                <a href="scorebord.html"><img id="scoreimg" src="photos/scoreboard.png"></a>
-                <a href="Scoreboard">Scoreboard</a>
-                <div class="menugrp">
-                    <hr id="menuline">
+                <div class="three">
+                    <a href="scorebord.html"><img class="scoreimg" src="photos/scoreboard.png"></a>
+                    <h3>Scoreboard</h3>
+                    <div class="menugrp">
+                        <hr class="menuline">
+                    </div>
                 </div>
                 <div class="endgame">
-                    <a href="index.html" class="endbtn" style="color:#FFFBE0">End Game</a>
+                    <a href="index.html" class="endbtn" >End Game</a>
                 </div>
             </div>
         </div>
@@ -40,28 +76,142 @@
             <div class="line"></div>
         </span>
         <br>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="business.html">School of Business & Accountancy<img id="schlogo" src="photos/schoollogo.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of InfoComm Technology<img id="schlogo" style="height:40px;" src="photos/ict.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Engineering<img id="schlogo" src="photos/soe.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Design & Environment<img id="schlogo"  src="photos/design.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Film & Media Studies<img id="schlogo" style="height:40px;" src="photos/fms.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Humanities & Social Sciences<img id="schlogo" style="height:40px;" src="photos/hms.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Health Sciences<img id="schlogo" style="height:40px;" src="photos/hs.png"></a>
-            <hr>
-            <a class="dropdown-item" href="#">School of Life Sciences & Chemcical Technology<img id="schlogo" style="height:40px;" src="photos/isct.png"></a>
-
+        <div class="progress1" style= "margin-top:100px;">
+            <img src="photos/progressbar.png" class="bar" alt="progress bar">
+            <img src = "photos/inbar.png" class="bar_in" alt="progress bar">
+           
+            <h3 class="amt">1/4</h3>
+            
+            <h3 class="text" style= "margin-left:25px;">Items <br>Collected </h3>
         </div>
-      </div>
+        <img src="photos/3dperson.png" class="janice" alt="3d character">
+        <div class="speechbubble">
+            <div class="bubble"style="height:150px; margin:20px; margin-left:400px">
+                Which school would you like to head to first? Please select a school to head to for your first location!
+            </div>
+        </div>
+        </div>
+        <div class="schooldropdownmenu">
+            <div class="dropdown">
+                <button onclick="schDropdown()" class="dropbtn">Please select the school which you would like to head to first!<img id="dropicon" src="photos/dropdownicon.png"></button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a class="schdropitem" onClick="baPage()">School of Business & Accountancy<img id="schlogo" src="photos/schoollogo.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="ictPage()">School of InfoComm Technology <img id="schlogo" style="height:40px;"src="photos/ict.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="soePage()">School of Engineering<img id="schlogo" src="photos/soe.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="dePage()">School of Design & Environment<img id="schlogo" src="photos/design.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="fmsPage()">School of Film & Media Studies<img id="schlogo"style="height:40px;" src="photos/fms.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="hmsPage()">School of Humanities & Social Sciences<img id="schlogo" style="height:40px;" src="photos/hms.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="hsPage()">School of Health Sciences<img id="schlogo" style="height:40px;" src="photos/hs.png"></a>
+                  <hr id="schdrop">
+                  <a class="schdropitem" onClick="lsctPage()">School of Life Sciences & Chemical Technology<img id="schlogo" style="height:40px;" src="photos/isct.png"></a>
+                </div>
+              </div>
+        </div>
+
+        <div class="schbackground">
+            <img id="building" src="photos/NP Building .png">
+        </div>
+
+
+
+        <!--BUSINESS SCH PAGE-->
+            <!--Business Quiz-->
+        <h2 class="quizT">Quiz</h2>
+        <form class="quiz2"> 
+            <h3 class="top">Which of the following is the closest food court to the business school?</h3>
+            <input type="radio" id="baq1opt1" value="Makan Place">
+            <label for="baq1opt1">Makan Place</label>
+            <br>
+            <input type="radio" id="baq1opt2" value="Munch">
+            <label for="baq1opt2">Munch</label>
+            <br>
+            <input type="radio" id="baq1opt3" value="Food Club">
+            <label for ="baq1opt3">Food Club</label>
+            <br>
+            <h3>How many courses does the business school offer?</h3>
+            <input type="radio" id="baq2opt1" value="6">
+            <label for="baq2opt1">6</label>
+            <br>
+            <input type="radio" id="baq2opt2" value="5">
+            <label for="baq2opt2">5</label>
+            <br>
+            <input type="radio" id="baq2opt3" value="2">
+            <label for="baq2opt3">2</label>
+            <br>     
+        </form>
+        <div class="placename"></div>
+        <div class="imageclue">
+            <img id="clue"src="photos/businessclue.png">
+        </div>
+        <div class="locationlink">
+            <a href="https://www.np.edu.sg/ba/Pages/default.aspx" class="baans"><u style="color:#793B36">Click Here To Find Out More</u></a>
+        </div>
+
+        <div class="reachbtn" >
+            <input type="button" id="babtn" value="Let's Go!" style="background-color:#CF726B; color:#FFFBE0; display:none" onClick="baPage2()">
+        </div>
+
+        <div class ='passcodecontainer'>
+            <label class ="ptext" for="passcode">Key in secret passcode</label>
+            <input type="text" id="passcode" required>
+            <input type="submit" class="passcodesubmit" value="Submit"  >
+        </div>
+
+        <div class="quizpopup">
+            <div class="quizscore" id="quizscore">
+                <div class="quizitems">
+                    <div class="quizh">
+                        <p class="quiztitle">Congratulations</p>
+                    </div>
+                    <div class="quizresult">
+                        <p class="quizresulth">QUIZ SCORE</p>
+                        <p id="quizresult"></p>
+                    </div>
+                    <div class="quizpoints">
+                        <img class="stars" src="photos/quizstars.png">
+                        <p id="totalpoints4sect">+15</p>
+                    </div>
+                    <div class="popupnextbtn">
+                        <input type="button" class="popupbtn" value="Next" onClick="collectItem2()">
+                    </div>
+                </div>       
+            </div>
+        </div>
+
+        <img src="photos/revealansBA.png" alt="poster on wall" id="ans">
+        <div class="cross"></div>
+
+
+        <div class="arrowbk">
+            <a href="template1.html"> <img src="photos/arrow.png" class="back" alt="back button"></a>
+            <h4 class="backt">Back to start</h4>
+        </div>
+
+        <div class="bg">
+            
+            <div class="prizeText">
+                YOU HAVE COLLECTED <br>THE PEN
+            </div>
+    
+           <a href="locationtemplate.html"><div class="cross1" style="display:block; background-color:#006370; top:20px;" ></div></a>
+    
+            <img src="photos/ray5.png" class="rays" alt="light rays" >
+            <h3 class="amt" style="text-align:center; font-size: 70px; margin-left:55%;margin-top: 60px;position: absolute;top:48%;left:22%;"> 1/4</h3>
+            <h3 class="text" style= " font-size:40px;left:80%;text-align: right; margin-top: 70px; position:absolute;top:50%;">Items <br>Collected </h3>
+            <img src = "photos/pen.png"  class="itemimg" alt="Pen" style="margin-bottom: 10px;">
+        </div>
+        
+        
+        
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     </body>
 </html>
