@@ -78,8 +78,9 @@ $(".startbutton").click(function(){
         let username = document.getElementById("username").value;
         let apoints = 0;
         let aitemsCollected = 0;
+        let location = 1;
 
-        let newUser = new User (username, apoints, aitemsCollected);
+        let newUser = new User (username, apoints, aitemsCollected,location);
         console.log(newUser);
 
         localStorage.setItem("userStats", JSON.stringify(newUser));
@@ -106,95 +107,89 @@ $(".startbutton").click(function(){
         };
     
     // function object for user's name, points, number of items collected
-    function User(username,apoints,aitemsCollected) {
+    function User(username,apoints,aitemsCollected,location) {
       this.id = Date.now();
       this.name = username;
       this.points = apoints;
       this.itemsCollected = aitemsCollected;
+      this.location = location
          
     };
 
 
 //checking whether passcode is correct 
-    var location = 1; //check which location user is at
+   
     
     $(".passcodesubmit").click(function(){
       var checkPasscode = ""+document.getElementById("passcode").value;
       console.log(checkPasscode);
-      console.log(location);
-       
-    
+      
       let userStats = JSON.parse(localStorage.getItem("userStats"));
+
+    
+      
      // if user is at the first location
-      if (location == 1 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "14Jk091H"){
+      if (userStats.location == 1 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "14Jk091H"){
         if (localStorage.getItem("userStats") !== null) {
 
           let userStats = JSON.parse(localStorage.getItem("userStats"));
-          let accumulatedPoints = userStats.points + 15; 
-          userStats.points = accumulatedPoints ;
 
-          let addItem = userStats.itemsCollected+1 ;
-          userStats.itemsCollected = addItem;
+          userStats.points += 15;
+          userStats.itemsCollected+=1 ;
+          userStats.location+=1;
+       
+          localStorage.setItem("userStats", JSON.stringify(userStats));
          
-          localStorage.setItem("userStats.points", JSON.stringify(accumulatedPoints));
-          localStorage.setItem("userStats.itemsCollected", JSON.stringify(addItem));
-         
-          ++location;
+          
          
           console.log(userStats);
           $(".passcodecontainer").css("display","none");
           $(".quizpopup").css("display","block");
           
         }
-      } else if(location == 2 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "e4HP087p"){ //if user is at second location
+      } else if(userStats.location == 2 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "e4HP087p"){ //if user is at second location
         if (localStorage.getItem("userStats") !== null) {
 
           let userStats = JSON.parse(localStorage.getItem("userStats"));
-          console.log(userStats);
-          
-          let accumulatedPoints = userStats.points + 15;
-          let addItem = userStats.itemsCollected + 1 ;
 
+          userStats.points += 15;
+          userStats.itemsCollected+=1 ;
+          userStats.location+=1;
+       
+          localStorage.setItem("userStats", JSON.stringify(userStats));
 
-          userStats.points = accumulatedPoints ;
-          localStorage.setItem("userStats.points", JSON.stringify(accumulatedPoints));
-
-          
-          userStats.itemsCollected = addItem;
-          localStorage.setItem("userStats.itemsCollected", JSON.stringify(addItem));
-           
-        console.log(userStats);
-
-          ++location;
           
           $(".passcodecontainer").css("display","none");
           $(".quizpopup").css("display","block");
+          console.log(userStats);
 
         }
-      } else if (location == 3 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "90LmQrZ6"){
+      } else if (userStats.location == 3 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "90LmQrZ6"){
         if (localStorage.getItem("userStats") !== null) {
           let userStats = JSON.parse(localStorage.getItem("userStats"));
-          console.log(userStats);
-          console.log(userStats.points);
-          let accumulatedPoints = userStats.points + 15;
-          userStats.points = accumulatedPoints ;
-          localStorage.setItem("userStats.points", accumulatedPoints);
-          console.log(userStats.points);
-          
-          console.log(userStats);
-          ++location;
+
+          userStats.points += 15;
+          userStats.itemsCollected+=1 ;
+          userStats.location+=1;
+       
+          localStorage.setItem("userStats", JSON.stringify(userStats));
           $(".passcodecontainer").css("display","none");
           $(".quizpopup").css("display","block");
           
          } 
-      } else if (location == 4 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "2acb53Yg"){
-        let accumulatedPoints = userStats.points + 15;
-        localStorage.setItem("userStats.points", accumulatedPoints);
-    
-        ++location;
-        console.log(accumulatedPoints);
+      } else if (userStats.location == 4 && checkPasscode!="" && checkPasscode!= null && checkPasscode == "2acb53Yg"){
+        if (localStorage.getItem("userStats") !== null) {
+        let userStats = JSON.parse(localStorage.getItem("userStats"));
+
+          userStats.points += 15;
+          userStats.itemsCollected+=1 ;
+          userStats.location+=1;
+          
+          localStorage.setItem("userStats", JSON.stringify(userStats));
+          console.log(userStats)
         $(".passcodecontainer").css("display","none");
         $(".quizpopup").css("display","block");
+        }
       } else {
             alert("Please enter the correct passcode");
             return;
@@ -206,7 +201,410 @@ $(".startbutton").click(function(){
   });
 
 
+  //MAP API
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZGVuMTIzamFzbWluZSIsImEiOiJja3o2c240eHkxMzlnMzFvMjhsdzh1d3MxIn0.eLnHviVq5nng0d2dtGbOlA';
+      const map = new mapboxgl.Map({
+          container: 'map', // container ID
+          style: 'mapbox://styles/mapbox/streets-v11', // style URL
+          center: [103.774612, 1.333188], // starting position [lng, lat]
+          zoom: 17
+
+
+          // starting zoom
+          
+      });
+      
+
+      // adding school icons on map
+      map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/schoollogo.png', 
+
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+    map.addImage('BA', image);
+
+
+    // Add a data source containing one point feature.
+    map.addSource('point', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [103.77595870892608, 1.3319364595559566]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points',
+    'type': 'symbol',
+    'source': 'point', // reference the data source
+    'layout': {
+    'icon-image': 'BA', // reference the image
+    'icon-size': 0.4
+    }
+    });
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/ict.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('ICT', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point2', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [103.77521102042574,1.3344110333832981]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points2',
+    'type': 'symbol',
+    'source': 'point2', // reference the data source
+    'layout': {
+    'icon-image': 'ICT', // reference the image
+    'icon-size': 0.3
+    }
+    });
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/soe.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('SOE', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point3', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [103.7743587161088,1.3320859799678084]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points3',
+    'type': 'symbol',
+    'source': 'point3', // reference the data source
+    'layout': {
+    'icon-image': 'SOE', // reference the image
+    'icon-size': 0.2
+    }
+    });
+
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/fms.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('FMS', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point4', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [103.77530574797247,1.3318533465583449]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points4',
+    'type': 'symbol',
+    'source': 'point4', // reference the data source
+    'layout': {
+    'icon-image': 'FMS', // reference the image
+    'icon-size': 0.25
+    }
+    });
+
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/hms.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('HMS', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point5', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [103.77504356896912,1.3315113699785717]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points5',
+    'type': 'symbol',
+    'source': 'point5', // reference the data source
+    'layout': {
+    'icon-image': 'HMS', // reference the image
+    'icon-size': 0.25
+    }
+    });
+
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/hs.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('HS', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point6', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [ 103.77428520394221,1.3302495659411049]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points6',
+    'type': 'symbol',
+    'source': 'point6', // reference the data source
+    'layout': {
+    'icon-image': 'HS', // reference the image
+    'icon-size': 0.2
+    }
+    });
+
+
+    }
+    );
+    });
+      
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/isct.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+    // Add the image to the map style.
+
+    map.addImage('ISCT', image);
+
+    // Add a data source containing one point feature.
+    map.addSource('point7', {
+    'type': 'geojson',
+    'data': {
+    'type': 'FeatureCollection',
+    'features': [
+    {
+      
+      'type': 'Feature',
+      'geometry': {
+      'type': 'Point',
+      'coordinates': [ 103.77490189332893,1.3306262776232527]
+          },
+      },
+
+
+    ]
+    }
+    });
+
+    // Add a layer to use the image to represent the data.
+    map.addLayer({
+    'id': 'points7',
+    'type': 'symbol',
+    'source': 'point7', // reference the data source
+    'layout': {
+    'icon-image': 'ISCT', // reference the image
+    'icon-size': 0.2
+    }
+    });
+
+    }
+    );
+    });
+
+    map.on('load', () => {
+    // Load an image from an external URL.
+    map.loadImage(
+    'photos/design.png', 
+    (error, image) => {
+    if (error) throw error;
+
+
+// Add the image to the map style.
+
+  map.addImage('DE', image);
+
+  // Add a data source containing one point feature.
+  map.addSource('point8', {
+  'type': 'geojson',
+  'data': {
+  'type': 'FeatureCollection',
+  'features': [
+  {
+    
+    'type': 'Feature',
+    'geometry': {
+    'type': 'Point',
+    'coordinates': [ 103.774125760712,1.333663814270164 ]
+        },
+    },
+
+
+  ]
+  }
+  });
+
+// Add a layer to use the image to represent the data.
+  map.addLayer({
+  'id': 'points8',
+  'type': 'symbol',
+  'source': 'point8', // reference the data source
+  'layout': {
+  'icon-image': 'DE', // reference the image
+  'icon-size': 0.2
+  }
+  });
+  }
+  );
+  });
+
+  document.getElementById('fit').addEventListener('click', () => {
+  map.fitBounds([
+  [ 103.7832715635987,1.3293500682510455], // southwestern corner of the bounds
+  [103.77056306003449, 1.3327436469174052 ] // northeastern corner of the bounds
+  ]);
+  });
 });
+
     
 
 
@@ -1253,415 +1651,8 @@ function collectItem4(){
 }
 
 
-//MAP API
-// TO MAKE THE MAP APPEAR YOU MUST
-	// ADD YOUR ACCESS TOKEN FROM
-	// https://account.mapbox.com
-  $(document).ready(function(){
-
-  
-	mapboxgl.accessToken = 'pk.eyJ1IjoiZGVuMTIzamFzbWluZSIsImEiOiJja3o2c240eHkxMzlnMzFvMjhsdzh1d3MxIn0.eLnHviVq5nng0d2dtGbOlA';
-    const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v11', // style URL
-        center: [103.774612, 1.333188], // starting position [lng, lat]
-        zoom: 17
 
 
-         // starting zoom
-        
-    });
-    
-
-    // adding school icons on map
-    map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/schoollogo.png', 
-
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-map.addImage('BA', image);
-
- 
-// Add a data source containing one point feature.
-map.addSource('point', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [103.77595870892608, 1.3319364595559566]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points',
-'type': 'symbol',
-'source': 'point', // reference the data source
-'layout': {
-'icon-image': 'BA', // reference the image
-'icon-size': 0.4
-}
-});
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/ict.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('ICT', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point2', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [103.77521102042574,1.3344110333832981]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points2',
-'type': 'symbol',
-'source': 'point2', // reference the data source
-'layout': {
-'icon-image': 'ICT', // reference the image
-'icon-size': 0.3
-}
-});
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/soe.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('SOE', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point3', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [103.7743587161088,1.3320859799678084]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points3',
-'type': 'symbol',
-'source': 'point3', // reference the data source
-'layout': {
-'icon-image': 'SOE', // reference the image
-'icon-size': 0.2
-}
-});
-
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/fms.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('FMS', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point4', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [103.77530574797247,1.3318533465583449]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points4',
-'type': 'symbol',
-'source': 'point4', // reference the data source
-'layout': {
-'icon-image': 'FMS', // reference the image
-'icon-size': 0.25
-}
-});
-
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/hms.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('HMS', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point5', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [103.77504356896912,1.3315113699785717]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points5',
-'type': 'symbol',
-'source': 'point5', // reference the data source
-'layout': {
-'icon-image': 'HMS', // reference the image
-'icon-size': 0.25
-}
-});
-
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/hs.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('HS', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point6', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [ 103.77428520394221,1.3302495659411049]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points6',
-'type': 'symbol',
-'source': 'point6', // reference the data source
-'layout': {
-'icon-image': 'HS', // reference the image
-'icon-size': 0.2
-}
-});
-
-
-}
-);
-});
-    
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/isct.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('ISCT', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point7', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [ 103.77490189332893,1.3306262776232527]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points7',
-'type': 'symbol',
-'source': 'point7', // reference the data source
-'layout': {
-'icon-image': 'ISCT', // reference the image
-'icon-size': 0.2
-}
-});
-
-}
-);
-});
-
-map.on('load', () => {
-// Load an image from an external URL.
-map.loadImage(
-'photos/design.png', 
-(error, image) => {
-if (error) throw error;
-
- 
-// Add the image to the map style.
-
-map.addImage('DE', image);
- 
-// Add a data source containing one point feature.
-map.addSource('point8', {
-'type': 'geojson',
-'data': {
-'type': 'FeatureCollection',
-'features': [
-{
-    
-    'type': 'Feature',
-    'geometry': {
-    'type': 'Point',
-    'coordinates': [ 103.774125760712,1.333663814270164 ]
-        },
-    },
-
-
-]
-}
-});
- 
-// Add a layer to use the image to represent the data.
-map.addLayer({
-'id': 'points8',
-'type': 'symbol',
-'source': 'point8', // reference the data source
-'layout': {
-'icon-image': 'DE', // reference the image
-'icon-size': 0.2
-}
-});
-}
-);
-});
-
-document.getElementById('fit').addEventListener('click', () => {
-map.fitBounds([
-[ 103.7832715635987,1.3293500682510455], // southwestern corner of the bounds
-[103.77056306003449, 1.3327436469174052 ] // northeastern corner of the bounds
-]);
-});
-});
 
 //side nav menu functions
 //show checklist
@@ -1675,10 +1666,10 @@ $(".checklist").click(function(numItemsCollected) {
 
     let userStats = JSON.parse(localStorage.getItem("userStats"));
     let value = userStats.itemsCollected 
-    
+    console.log(value)
     
     let j=0;
-    while(j<value){
+    while(j < value){
       $(".CLcontent").append(`<img src="photos/tickk.png" class="tickk${j}" alt="tick" >`);
       
       j++;
@@ -1736,16 +1727,16 @@ $(".mapicon").click(function(){
 
 });
 
-var locationn= 1;
-var totalFinalPoints = 0;
+
+
+
 
 
 // function to check quiz marks
 function checkQuizPoints(){
-  
-  console.log(locationn)
-
-  if(locationn==1){
+  let userStats = JSON.parse(localStorage.getItem("userStats"));
+ 
+  if(userStats.location==1){
     let inputID = document.querySelector(".quiz2 input").id;
     
     let quizPoints = 0;
@@ -1822,7 +1813,7 @@ function checkQuizPoints(){
   
         }
       });
-
+     
   } else if(inputID == "fmsq1opt1"){
     console.log("hi")
       $(".quiz2 input").each(function(){
@@ -1895,22 +1886,26 @@ function checkQuizPoints(){
         }
       });
   } 
+
   showPasscode();
-  locationn++ ; 
+  userStats.points += quizPoints ;
+  localStorage.setItem("userStats", JSON.stringify(userStats));
+  console.log(userStats);
   document.getElementById("quizresult").innerHTML = `${quizPoints}/10`;
   let points4ThisLocation = 15+ quizPoints;
-  totalFinalPoints+=points4ThisLocation ;
+ 
   document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}` ;
+
     
         
   
 } 
-  else if(locationn==2){
+  else if(userStats.location==2){
       let quizPoints = 0;
-      
+ 
       $(".quiz input").each(function(){
         let option = $(this).attr("id") ;
-      console.log(option)
+      
       let checkedOption = document.getElementById(option).checked
       
       
@@ -1927,10 +1922,12 @@ function checkQuizPoints(){
       }
     });
     showPasscode();
-    locationn++ ; 
+    userStats.points += quizPoints ;
+    localStorage.setItem("userStats", JSON.stringify(userStats));
+    console.log(userStats);
     document.getElementById("quizresult").innerHTML = `${quizPoints}/10`;
     let points4ThisLocation = 15+ quizPoints;
-    totalFinalPoints+=points4ThisLocation ;
+  
     document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}` ;
       
           
@@ -1940,11 +1937,11 @@ function checkQuizPoints(){
   
   
  
-  else if(locationn==3){
+  else if(userStats.location==3){
     let quizPoints = 0;
       $(".quiz input").each(function(){
         let option = $(this).attr("id") ;
-       console.log(option)
+   
       let checkedOption = document.getElementById(option).checked
       
       
@@ -1961,14 +1958,16 @@ function checkQuizPoints(){
       }
     });
     showPasscode();
-    locationn++ ; 
+    userStats.points += quizPoints ;
+    localStorage.setItem("userStats", JSON.stringify(userStats));
+    console.log(userStats);
     document.getElementById("quizresult").innerHTML = `${quizPoints}/10`
     let points4ThisLocation = 15+ quizPoints;
     document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}` ;
-    totalFinalPoints+=points4ThisLocation ;
+
   } 
 
-  else if(locationn==4){
+  else if(userStats.location==4){
     
     let quizPoints = 0;
     $(".quiz input").each(function(){
@@ -1990,14 +1989,17 @@ function checkQuizPoints(){
   });
   showPasscode();
   
+  userStats.points += quizPoints ;
+  localStorage.setItem("userStats", JSON.stringify(userStats));
+  console.log(userStats);
   document.getElementById("quizresult").innerHTML = `${quizPoints}/10`
   let points4ThisLocation = 15+ quizPoints;
-  totalFinalPoints+=points4ThisLocation ;
+  document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}`
+
+  //putting the final total points in the end page 
   
   
-  document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}` ;
   
-  console.log(totalFinalPoints)
 } 
  
 }
