@@ -65,14 +65,33 @@
                 <br>
                 <br>
                 <div class="three">
-                    <a href="scorebord.html"><img class="scoreimg" src="photos/scoreboard.png"></a>
-                    <h3>Scoreboard</h3>
+                    <img class="scoreimg" src="photos/scoreboard.png" onClick="scoreboard()">
+                    <h3 >Scoreboard</h3>
                     <div class="menugrp">
                         <hr class="menuline">
                     </div>
+                    <div class="endbtn" style="width:50px; margin-left:70%;  display:none; " onClick="back3()">Back</div>
+                    <div class="scorepopup">
+                        <div class="boarditems">
+                                <div class="scoreboardh">
+                                    <img class="scoretitle" src="photos/scoeboardstarright.png"style="padding-top:0px;">
+                                    <p class="scoretitle"><u>Scoreboard</u>
+                                    <img class="scoretitle" src="photos/scoreboardstarleft.png">
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="runnerupcontent" style="background-color: #D5FFFD;">
+                                        <p class="winnercontent">1.</p>
+                                        <p  id="winnerid">Jasmine</p>
+                                        
+                                         <p id="scoreboardpoints1">20 </p>
+                                        <img  class="scoreboardstar" src="photos/star.png">
+                                    </div>
+                                </div>
+                        </div>       
+                    </div>
                 </div>
                 <div class="endgame">
-                    <a href="index.html" class="endbtn" >End Game</a>
+                   <a href="totalitems.html"> <div class="endbtn1" onClick="endGame()" >End Game</div></a>
                 </div>
             </div>
         </div>
@@ -88,7 +107,7 @@
            
             <h3 class="amt">1/4</h3>
             
-            <h3 class="text" style= "margin-left:25px;">Items <br>Collected </h3>
+            <h3 class="text" >Items <br>Collected </h3>
         </div>
         <img src="photos/3dperson.png" class="janice" alt="3d character">
         <div class="bubble" >
@@ -127,7 +146,7 @@
 
 
 
-        <div class="placename"></div>
+        <div class="placename" style="text-align:center; "></div>
         
         <div class="imageclue"></div>
    
@@ -135,7 +154,7 @@
         <a href="#ans" class="baans"><u></u></a>
         
         <div class="reachbtn" >
-            <input type="button" id="babtn" value="Let's Go!" style="background-color:#CF726B; " onClick="refreshPageMakanPlace()">
+            <input type="button" id="babtn" value="Let's Go!" style="background-color:#CF726B;  margin-top: 70px;" onClick="refreshPageMakanPlace()">
         </div>
     
 
@@ -170,9 +189,10 @@
         <div class="cross" ></div>
 
 
-        <div class="arrowbk">
+        <div class="arrowbk" >
             <a href="template1.html"> <img src="photos/arrow.png" class="back" alt="back button" ></a>
             <h4 class="backt" >Back to start</h4>
+            
         </div>
 
 
@@ -194,9 +214,7 @@
         </div>
 
         
-        <input type="button" value="friends?" id="hi">
-        <div id="fname"></div>
-
+        
         
         
 
