@@ -5,7 +5,7 @@ $(".startbutton").click(function(){
     $(".intro").css("display","none");
     $(".namesect").css("display","flex");
     $(".submit1").css("display","block");
-    $("#startbutton").css("display","none");
+    $(".startbutton").css("display","none");
   
 });
 
@@ -650,12 +650,12 @@ $(".cross").click(function(){
 
 });
 //show anser
-$(".baans").click(function(){
+function showAnswer(){
   $("#ans").css("display","block");
   $(".cross").css("display","block");
 
 
-});
+};
 
 //show passcode
 function showPasscode(){
@@ -802,7 +802,7 @@ function baPage2(){
   $(".reachbtn").css("display","flex");
   $("#babtn").css("display","flex");
 
-  let shownewLinkba = `<u>${baLink2}</u>`
+  let shownewLinkba = `<u onClick="showAnswer()">${baLink2}</u>`
   $(".baans").append(shownewLinkba);
   
   $(".imageclue").css("display","flex");
@@ -890,7 +890,7 @@ function ictPage2(){
   $(".bubble").append(ictSpeech2);
   $(".bubble").css("height","170px");
 
-  let shownewLinkict = `<u>${ictLink2}</u>`
+  let shownewLinkict = `<u onClick="showAnswer()">${ictLink2}</u>`
   $(".baans").append(shownewLinkict);
   $(".baans").css("color","#006370");
 
@@ -974,7 +974,7 @@ function soePage2(){
   $(".bubble").append(soeSpeech2);
   $(".bubble").css("height","170px");
 
-  let shownewLinksoe = `<u>${soeLink2}</u>`
+  let shownewLinksoe = `<u onClick="showAnswer()">${soeLink2}</u>`
   $(".baans").append(shownewLinksoe);
   $(".baans").css("color","#006370");
 
@@ -1041,7 +1041,7 @@ function dePage(){
   $(".baans").attr("href","https://www.np.edu.sg/de/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let deLink= de.link;
-  $(".baans").append(`<u>${deLink}</u>`);
+  $(".baans").append(`<u >${deLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/deans.PNG");
   $(".placename").css("margin-left","24%");
@@ -1062,7 +1062,7 @@ function dePage2(){
   $(".bubble").append(deSpeech2);
   $(".bubble").css("height","170px");
 
-  let shownewLinkde = `<u>${deLink2}</u>`
+  let shownewLinkde = `<u onClick="showAnswer()">${deLink2}</u>`
   $(".baans").append(shownewLinkde);
   $(".baans").css("color","#006370");
 
@@ -1151,7 +1151,7 @@ function fmsPage2(){
   $(".bubble").append(fmsSpeech2);
   $(".bubble").css("height","240px");
 
-  let shownewLinkfms = `<u>${fmsLink2}</u>`
+  let shownewLinkfms = `<u onClick="showAnswer()">${fmsLink2}</u>`
   $(".baans").append(shownewLinkfms);
   $(".baans").css("color","#006370");
 
@@ -1238,7 +1238,7 @@ function hmsPage2(){
   $(".bubble").append(hmsSpeech2);
   $(".bubble").css("height","250px");
 
-  let shownewLinkhms = `<u>${hmsLink2}</u>`
+  let shownewLinkhms = `<u onClick="showAnswer()">${hmsLink2}</u>`
   $(".baans").append(shownewLinkhms);
   $(".baans").css("color","#006370")
 
@@ -1325,7 +1325,7 @@ function hsPage2(){
   $(".bubble").append(hsSpeech2);
   $(".bubble").css("height","200px");
 
-  let shownewLinkhs = `<u>${hsLink2}</u>`
+  let shownewLinkhs = `<u onClick="showAnswer()">${hsLink2}</u>`
   $(".baans").append(shownewLinkhs);
   $(".baans").css("color","#006370");
 
@@ -1413,7 +1413,7 @@ function lsctPage2(){
   $(".bubble").append(lsctSpeech2);
   $(".bubble").css("height","240px");
 
-  let shownewLinklsct = `<u>${lsctLink2}</u>`
+  let shownewLinklsct = `<u onClick="showAnswer()">${lsctLink2}</u>`
   $(".baans").append(shownewLinklsct);
   $(".baans").css("color","#006370");
 
@@ -1496,7 +1496,7 @@ function refreshPageSports1(){
   $(".baans").empty();
   $(".baans").attr("href","https://www.np.edu.sg/studentlife/Pages/ccas.aspx");
   let link = sports.link ;
-  $(".baans").append(`<u style="color:#793B36;">${link}</u>`);
+  $(".baans").append(`<u style="color:#793B36;" >${link}</u>`);
 
   let btn = sports.buttonL ;
   let newBtn = `<input type="button" id="babtn" value="${btn}" style="background-color:#CF726B; margin-top:10px" onClick="refreshPageSports2()" >`
@@ -1521,7 +1521,7 @@ function refreshPageSports2(){
     let newInput = `<input type="button" id="babtn" value="${butt0n}" style="margin-top:20px;"onClick = "quizPage()">`
     $(".reachbtn").append(newInput);
 
-    let newText = `<u>${textL}</u>`
+    let newText = `<u onClick="showAnswer()">${textL}</u>`
     $(".baans").append(newText);
 
     
