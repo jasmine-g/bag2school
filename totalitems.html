@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <link href="style.css" rel="stylesheet" type="text/css">
-        
+        <link href="style.css" rel="stylesheet" type="text/css" >
+        <link rel="stylesheet" href="normalise.css">
+        <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
     </head>
@@ -59,108 +61,113 @@
                 <br>
                 <br>
                 <div class="three">
-                    <a href="scorebord.html"><img class="scoreimg" src="photos/scoreboard.png"></a>
-                    <h3>Scoreboard</h3>
+                    <img class="scoreimg" src="photos/scoreboard.png" onClick="scoreboard()">
+                    <h3 >Scoreboard</h3>
                     <div class="menugrp">
                         <hr class="menuline">
                     </div>
-                </div>
-                <div class="endgame">
-                    <a href="index.html" class="endbtn" >End Game</a>
+                    <div class="endbtn" style="width:50px; margin-left:70%;  display:none; " onClick="back3()">Back</div>
+                    <div class="scorepopup">
+                        <div class="boarditems">
+                                <div class="scoreboardh">
+                                    <img class="scoretitle" src="photos/scoeboardstarright.png"style="padding-top:0px;">
+                                    <p class="scoretitle"><u>Scoreboard</u>
+                                    <img class="scoretitle" src="photos/scoreboardstarleft.png">
+                                </div>
+                                <div class="poscolumn">
+                                    <div class="runnerupcontent" style="background-color: #D5FFFD;">
+                                        <p class="winnercontent">1.</p>
+                                        <p  id="winnerid">Jasmine</p>
+                                        
+                                         <p id="scoreboardpoints1">20 </p>
+                                        <img  class="scoreboardstar" src="photos/star.png">
+                                    </div>
+                                </div>
+                        </div>       
+                    </div>
                 </div>
             </div>
         </div>
-        
         <span onclick="openMenu()">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
         </span>
+        
         <div class="nextpg">
-            <input type="button" id="next-totalp" class="endpgbtn" value="Next" onClick="endPage()">
+            <input type="button" class="nexttotalp"  value="Next">
         </div>
-    
-        <div class="bubble" style="height:190px;">
-            Thank you for your help today!<br>Hope you enjoyed exploring NP as much as i enjoyed showing you around
+        <div class="backhome">
+            <a href="index.html"input type="button" class="homebtn">Home</a>
+        </div>
+        <img src="photos/3dperson.png" class="janice" alt="3d character" style="z-index:  1; margin-left:0px;">
+        <div class="bubble" style="height:130px;">
+            Thank you for your help today!<br>Hope you enjoyed exploring NP as much as i enjoyed showing you around!
         </div>
         <br>
+        
         <div class="earned">
             <div class="textearned">
-                <p id="textearn"><b>You Have Earned...</b></p>
+                <p class="textearn"><b>You Have Earned...</b></p>
+                
             </div>
+            <input type="button" value="Reveal Points" class="rpoints">
             <div class="pointsearned">
-                <p id="textpoints"><b></b></p>
-                <img src="photos/star.png" id="earnedstar">
+                <p id="textpoints"></p>
+                <img src="photos/star.png" class="earnedstar">
+            </div>
+            <div class="itemcollectedtext">
+                <p id="itemtext">These are the items you have <br>collected!</p>
             </div>
         </div> 
-        <div class="itemcollectedtext">
-            <p id="itemtext">These are the items you have <br>collected!</p>
-        </div>
         <div class="endbackground">
             <img id="confetti" src="photos/confetti1.png">
         </div> 
        
-        <div id="scorepopup">
+        <div class="scorepopup">
             <div class="boarditems">
                     <div class="scoreboardh">
-                        <img id="scoretitle" src="photos/scoeboardstarright.png"style="padding-top:0px;">
-                        <p id="scoretitle"><u>Scoreboard</u>
-                        <img id="scoretitle" src="photos/scoreboardstarleft.png">
+                        <img class="scoretitle" src="photos/scoeboardstarright.png"style="padding-top:0px;">
+                        <p class="scoretitle"><u>Scoreboard</u>
+                        <img class="scoretitle" src="photos/scoreboardstarleft.png">
                     </div>
                     <div class="poscolumn">
-                        <div class="firstposcontent">
+                        <div class="runnerupcontent" style="background-color: #D5FFFD;">
                             <p class="winnercontent">1.</p>
-                            <p class="winnercontent" class="winnerid">Jasmine</p>
-                            <div class="pointnstar">
-                                <p class="scoreboardpoints1">20 <img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
-                            </div>
+                            <p  id="winnerid">Jasmine</p>
+                            
+                             <p id="scoreboardpoints1">20 </p>
+                            <img  class="scoreboardstar" src="photos/star.png">
                         </div>
                     </div>
-                    <div class="poscolumn">
-                        <div class="runnerupcontent">
-                            <p class="winnercontent">2.</p>
-                            <p class="winnercontent" class="secondid">Janel</p>
-                            <div class="pointnstar">
-                            <p class="scoreboardpoints2">5<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poscolumn">
-                        <div class="runnerupcontent">
-                            <p class="winnercontent">3.</p>
-                            <p class="winnercontent" class="thirdid">Tom</p>
-                            <div class="pointnstar" class="winnercontent">
-                                <p class="scoreboardpoints3">20<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="poscolumn">
-                        <div class="runnerupcontent">
-                            <p class="winnercontent">4.</p>
-                            <p class="winnercontent" class="fourthid">Jessica</p>
-                            <div class="pointnstar" class="winnercontent">
-                                <p class="scoreboardpoints4">5<img class="winnercontent" class="scoreboardstar" src="photos/star.png"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="scoreboardf">
-                        <img src="photos/friendpoints.png" class="friendcirclepts">
-                        <input type="button" id="popupbtn" value="Next" onClick="endPage()"class="scorenextbtn">
-                    </div>
-            </div>       
+                    
+            </div>     
+            <input type="button"  value="Next" onClick="endPage()"class="scorenextbtn">  
         </div>
-  
-        <img class="lunchbox" src="photos/lunchbox.PNG">
-        <img class="charger" src="photos/charger.PNG">
-        <img class="bag" src="photos/bag.PNG">
+        
+    </div>
         <div class="itemsdisplay">
-            <img id="podium" src="photos/itemspodium.png">
+            <div class="redthing1">
+                <img class="lunchbox" src="photos/lunchbox.PNG">
+                <img class="lower1"src="photos/redlower.png">
+            </div>
+            <div class="redthing2">
+                <img class="pen" src="photos/pen.png">
+                <img class="higher1" src="photos/redhigher.png">
+            </div>
+            <div class="redthing3">
+                <img class="charger" src="photos/charger.PNG">
+                <img class="lower2" src="photos/redlower.png">
+            </div>
+            <div class="redthing4">
+                <img class="bag" src="photos/bag.PNG">
+                <img class="higher2"src="photos/redhigher.png">
+            </div>
         </div>
-
-
+    
         <!--ENDPAGE-->
         <div class="titleloc">
-            <img class="locicon" src="photos/locationicon.png">
+           
             <p class="locationtitle"><b>Location</b></p>
         </div>
         <div class="location">
@@ -170,18 +177,16 @@
         <p class="prizestitle"><b>Prizes To Be Collected</b></p>
         <div class="prizescollected">
             <p>1 Free NP Water Bottle</p>  
-            <p>$30 CapitaLand Voucher</p>
-            <p>1 Disposable Camera</p>
+            <p id="vamt">$30 CapitaLand Voucher</p>
+            
         </div>
         <div class="footerimg">
-            <img id="camimg" src="photos/disposablevam.png"width="234" height="170">
             <img id="waterbottleimg" src="photos/waterbottle.PNG"width="300px"height="280px">
             <img id="voucherimg" src="photos/voucherimg.png">  
         </div>
 
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- 
         <script src="script.js"></script>
     </body>
 </html>
