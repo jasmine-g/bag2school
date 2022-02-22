@@ -42,24 +42,7 @@ $(".startbutton").click(function(){
     });
   
 
-    $("#hi").click(function() {
-        
-        if (localStorage.getItem("groupStats") !== null) {
-          groupStats = JSON.parse(localStorage.getItem("groupStats"));
-          let frenData = "";
-          console.log(groupStats[1]);
-          for(let friend of groupStats){
-            frenData += `${friend.frenName},`;
-        }
-        document.getElementById("fname").innerHTML = frenData;
-        console.log(frenData)
-      }
-              
-           else{
-            console.log("no friends")
-          }
-          
-        });
+   
         
 // function object for friend usernames
     function Friend (frenName) {
@@ -73,6 +56,7 @@ $(".startbutton").click(function(){
     // setting of user's username,points,number of collected items in local storage 
 
   $('.submit1').click(function(){
+    
     if(document.getElementById("username").checkValidity() && document.getElementById("username").value !="" && document.getElementById("username").value != null){
    
         let username = document.getElementById("username").value;
@@ -85,7 +69,6 @@ $(".startbutton").click(function(){
 
         localStorage.setItem("userStats", JSON.stringify(newUser));
 
-        showUserStats();
         window.location.replace("template1.html");
        
 
@@ -96,15 +79,7 @@ $(".startbutton").click(function(){
     });
   
 
-    function showUserStats() {
-        
-        if (localStorage.getItem("userStats") !== null) {
-          userStats = JSON.parse(localStorage.getItem("userStats"));
-
-              console.log(userStats);
-          }
-          
-        };
+   
     
     // function object for user's name, points, number of items collected
     function User(username,apoints,aitemsCollected,location) {
@@ -801,6 +776,7 @@ function baPage(){
   $("#babtn").css("display","flex");
   $(".locationlink").css("display","flex");
   $(".schooldropdownmenu").css("display","none");
+  $(".arrowbk").css("margin-top","0");
  
 
   let baSpeech = baOne.textL;
@@ -836,6 +812,7 @@ function baPage2(){
   $(".placename").css({"display":"block","margin-right":"390px"});
   $("a.baans").attr("href","#ans");
 
+  $(".imageclue").css("display","flex");
 }
 
 
@@ -846,6 +823,7 @@ function ictPage(){
   $(".reachbtn").empty();
   $(".locationlink").css("display","flex");
   $(".baans").empty();
+  $(".arrowbk").css("margin-top","0");
 
   $(".schooldropdownmenu").css("display","none");
   $(".quiz2").empty();
@@ -888,9 +866,11 @@ function ictPage(){
   $(".baans").attr("href","https://www.np.edu.sg/ict/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let ictLink= ict.link;
-  $(".baans").append(ictLink);
+  $(".baans").append(`<u>${ictLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/ictans.PNG");
+  $(".placename").css("margin-left","25%");
+
   
 }
 function ictPage2(){
@@ -902,6 +882,7 @@ function ictPage2(){
   $(".placename").css("display","block");
   $(".imageclue").empty();
 
+
   let ictSpeech2 = ict2.textL;
   let ictLink2 = ict2.link;
   let ictButton2 = ict2.buttonL;
@@ -911,6 +892,7 @@ function ictPage2(){
 
   let shownewLinkict = `<u>${ictLink2}</u>`
   $(".baans").append(shownewLinkict);
+  $(".baans").css("color","#006370");
 
   let showHerebtnict = `<input type="button" id="babtn" value="${ictButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnict);
@@ -920,6 +902,8 @@ function ictPage2(){
   let ictImgclue= `<img src="photos/schimgs/ictsch.png" class= "baclue">`
   $(".imageclue").append(ictImgclue);
   $(".baans").attr("href","#ans");
+
+  $(".imageclue").css("display","flex");
 }
 
 //ENGINEERING//
@@ -928,6 +912,7 @@ function soePage(){
   $(".passcodecontainer").css("display","none");
   $(".reachbtn").empty();
   $(".locationlink").css("display","flex");
+  $(".arrowbk").css("margin-top","0px");
   $(".baans").empty();
 
   $(".schooldropdownmenu").css("display","none");
@@ -966,11 +951,12 @@ function soePage(){
 
 
   $(".baans").attr("href","https://www.np.edu.sg/soe/Pages/default.aspx");
-  $(".baans").css("color","#793B36")
+  $(".baans").css("color","#793B36");
   let soeLink= soe.link;
-  $(".baans").append(soeLink);
+  $(".baans").append(`<u>${soeLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/soeans.PNG");
+  $(".placename").css("margin-left","12%");
 }
 function soePage2(){
   $(".bubble").empty();
@@ -990,6 +976,7 @@ function soePage2(){
 
   let shownewLinksoe = `<u>${soeLink2}</u>`
   $(".baans").append(shownewLinksoe);
+  $(".baans").css("color","#006370");
 
   let showHerebtnsoe = `<input type="button" id="babtn" value="${soeButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnsoe);
@@ -999,6 +986,7 @@ function soePage2(){
   let soeImgclue= `<img src="photos/schimgs/soesch.png" class= "baclue">`
   $(".imageclue").append(soeImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 
@@ -1010,6 +998,7 @@ function dePage(){
   $(".reachbtn").empty();
   $(".locationlink").css("display","flex");
   $(".baans").empty();
+  $(".arrowbk").css("margin-top","0px");
 
   $(".schooldropdownmenu").css("display","none");
   $(".quiz2").empty();
@@ -1052,9 +1041,10 @@ function dePage(){
   $(".baans").attr("href","https://www.np.edu.sg/de/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let deLink= de.link;
-  $(".baans").append(deLink);
+  $(".baans").append(`<u>${deLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/deans.PNG");
+  $(".placename").css("margin-left","24%");
 }
 function dePage2(){
   $(".bubble").empty();
@@ -1074,6 +1064,7 @@ function dePage2(){
 
   let shownewLinkde = `<u>${deLink2}</u>`
   $(".baans").append(shownewLinkde);
+  $(".baans").css("color","#006370");
 
   let showHerebtnde = `<input type="button" id="babtn" value="${deButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnde);
@@ -1083,17 +1074,18 @@ function dePage2(){
   let deImgclue= `<img src="photos/schimgs/designsch.png" class= "baclue">`
   $(".imageclue").append(deImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 
-
-//FMS//
 function fmsPage(){
   $(".bubble").empty();
   $(".passcodecontainer").css("display","none");
   $(".reachbtn").empty();
   $(".locationlink").css("display","flex");
   $(".baans").empty();
+  $(".arrowbk").css("margin-top","0px");
+  
 
   $(".schooldropdownmenu").css("display","none");
   $(".quiz2").empty();
@@ -1136,11 +1128,13 @@ function fmsPage(){
   $(".baans").attr("href","https://www.np.edu.sg/fms/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let fmsLink= fms.link;
-  $(".baans").append(fmsLink);
+  $(".baans").append(`<u>${fmsLink}</u>`);
   
 
   $("#ans").attr("src","photos/schimgs/fmsans.PNG");
+  $(".placename").css("margin-left","21%");
 }
+
 function fmsPage2(){
   $(".bubble").empty();
   $(".baans").empty();
@@ -1159,6 +1153,8 @@ function fmsPage2(){
 
   let shownewLinkfms = `<u>${fmsLink2}</u>`
   $(".baans").append(shownewLinkfms);
+  $(".baans").css("color","#006370");
+
 
   let showHerebtnfms = `<input type="button" id="babtn" value="${fmsButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnfms);
@@ -1168,6 +1164,7 @@ function fmsPage2(){
   let fmsImgclue= `<img src="photos/schimgs/fmssch.png" class= "baclue">`
   $(".imageclue").append(fmsImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 //HMS//
@@ -1175,6 +1172,7 @@ function hmsPage(){
   $(".bubble").empty();
   $(".passcodecontainer").css("display","none");
   $(".reachbtn").empty();
+  $(".arrowbk").css("margin-top","0px");
   $(".locationlink").css("display","flex");
   $(".baans").empty();
 
@@ -1219,9 +1217,10 @@ function hmsPage(){
   $(".baans").attr("href","https://www.np.edu.sg/hms/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let hmsLink= hms.link;
-  $(".baans").append(hmsLink);
+  $(".baans").append(`<u>${hmsLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/hmsans.PNG");
+  $(".placename").css("margin-left","21%");
 }
 function hmsPage2(){
   $(".bubble").empty();
@@ -1241,6 +1240,7 @@ function hmsPage2(){
 
   let shownewLinkhms = `<u>${hmsLink2}</u>`
   $(".baans").append(shownewLinkhms);
+  $(".baans").css("color","#006370")
 
   let showHerebtnhms = `<input type="button" id="babtn" value="${hmsButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnhms);
@@ -1250,6 +1250,7 @@ function hmsPage2(){
   let hmsImgclue= `<img src="photos/schimgs/hmssch.png" class= "baclue">`
   $(".imageclue").append(hmsImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 
@@ -1258,6 +1259,7 @@ function hsPage(){
   $(".bubble").empty();
   $(".passcodecontainer").css("display","none");
   $(".reachbtn").empty();
+  $(".arrowbk").css("margin-top","0px");
   $(".locationlink").css("display","flex");
   $(".baans").empty();
 
@@ -1302,9 +1304,10 @@ function hsPage(){
   $(".baans").attr("href","https://www.np.edu.sg/hs/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let hsLink= hs.link;
-  $(".baans").append(hsLink);
+  $(".baans").append(`<u>${hsLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/hsans.PNG");
+  $(".placename").css("margin-left","17%");
 }
 function hsPage2(){
   $(".bubble").empty();
@@ -1324,6 +1327,8 @@ function hsPage2(){
 
   let shownewLinkhs = `<u>${hsLink2}</u>`
   $(".baans").append(shownewLinkhs);
+  $(".baans").css("color","#006370");
+
 
   let showHerebtnhs = `<input type="button" id="babtn" value="${hsButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnhs);
@@ -1333,6 +1338,7 @@ function hsPage2(){
   let hsImgclue= `<img src="photos/schimgs/hssch.png" class= "baclue">`
   $(".imageclue").append(hsImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 
@@ -1341,6 +1347,7 @@ function lsctPage(){
   $(".bubble").empty();
   $(".passcodecontainer").css("display","none");
   $(".reachbtn").empty();
+  $(".arrowbk").css("margin-top","0px");
   $(".locationlink").css("display","flex");
   $(".baans").empty();
 
@@ -1385,9 +1392,10 @@ function lsctPage(){
   $(".baans").attr("href","https://www.np.edu.sg/lsct/Pages/default.aspx");
   $(".baans").css("color","#793B36")
   let lsctLink= hs.link;
-  $(".baans").append(lsctLink);
+  $(".baans").append(`<u>${lsctLink}</u>`);
 
   $("#ans").attr("src","photos/schimgs/lsctans.PNG");
+  $(".placename").css("margin-left","25%");
 }
 function lsctPage2(){
   $(".bubble").empty();
@@ -1407,6 +1415,7 @@ function lsctPage2(){
 
   let shownewLinklsct = `<u>${lsctLink2}</u>`
   $(".baans").append(shownewLinklsct);
+  $(".baans").css("color","#006370");
 
   let showHerebtnlsct = `<input type="button" id="babtn" value="${lsctButton2}" style="margin-top:20px;" onClick="quizPage()">`
   $(".reachbtn").append(showHerebtnlsct);
@@ -1416,6 +1425,7 @@ function lsctPage2(){
   let lsctImgclue= `<img src="photos/schimgs/lsct.png" class= "baclue">`
   $(".imageclue").append(lsctImgclue);
   $(".baans").attr("href","#ans");
+  $(".imageclue").css("display","flex");
 }
 
 //makan place location
@@ -1425,10 +1435,11 @@ function refreshPageMakanPlace(){
   $(".reachbtn").empty();
   $(".placename").append("MAKAN PLACE");
   $(".placename").css("display","block");
-  $(".placename").css("margin-right","460px")
+  
   
   let img = `<img src="photos/mp.png" class="baclue" alt="NP Makan Place">`
   $(".imageclue").append(img);
+  $(".imageclue").css("display","flex");
 
   let btn = makanPlace.buttonL
   let newBtn = `<input type="button" id="babtn" value="${btn}" style="margin-top:20px;"onClick="quizPage()" >`
@@ -1637,7 +1648,7 @@ function collectItem3(){
 
 function collectItem4(){
   $(".cross1").remove();
-  let newCross = `<div class="cross1"></div>`
+  let newCross = `<a href="totalitems.html" ><div class="cross1" ></div></a>`
   $(".bg").append(newCross);
   $(".prizeText").empty();
   $(".prizeText").append("YOU HAVE COLLECTED THE CHARGER!");
@@ -1702,14 +1713,20 @@ function back2(){
   "top":"0%","left":"0%"});
   $(".menuitems").css({"top":"25%"});
   $(".endbtn").css("display","none");
-  $("a.endbtn ").css("display","block");
+  $(".endbtn1 ").css("display","block");
   
   }
-
+function back3(){
+  $(".one").css("display","block");
+  $(".two").css("display","block");
+  $(".scorepopup").css("display","none");
+  $(".endbtn1 ").css("display","block");
+  $(".endbtn").css("display","none");
+}
 //showing map
 $(".mapicon").click(function(){
   $(".endbtn").css("display","block");
-  $("a.endbtn ").css("display","none");
+  $(".endbtn1 ").css("display","none");
   $("#map").css({"visibility":"visible",
   }); 
   const mapDiv = document.getElementById("map");
@@ -1727,6 +1744,57 @@ $(".mapicon").click(function(){
 
 });
 
+//show scoreboard
+function scoreboard(){
+  if ((localStorage.getItem("userStats")) !== null && (localStorage.getItem("groupStats") !== null)) {
+    let x =1;
+    $(".poscolumn").remove()
+    let userStats = JSON.parse(localStorage.getItem("userStats"));
+    $(".boarditems").append(`<div class="poscolumn">
+    <div class="runnerupcontent" style="background-color: #A5E8E4;">
+        <p class="winnercontent">1.</p>
+        <p  id="winnerid">${userStats.name}</p>
+        
+         <p id="scoreboardpoints1">${userStats.points}</p>
+        <img  class="scoreboardstar" src="photos/star.png">
+    </div>
+</div>`)
+    x++;
+
+    let groupStats = JSON.parse(localStorage.getItem("groupStats"));
+    
+    for(let friend of groupStats){
+      
+      $(".boarditems").append(`<div class="poscolumn">
+      <div class="runnerupcontent" style="background-color: #D5FFFD;">
+          <p class="winnercontent">${x}.</p>
+          <p  id="winnerid">${friend.frenName}</p>
+          
+           <p id="scoreboardpoints1">20 </p>
+          <img  class="scoreboardstar" src="photos/star.png">
+      </div>
+  </div>`)
+    x++;
+
+    }
+  } else{
+    let userStats = JSON.parse(localStorage.getItem("userStats"));
+    document.getElementById("winnerid").innerHTML = `${userStats.name}`
+    document.getElementById("scoreboardpoints1").innerHTML = `${userStats.points}`
+
+  }
+
+    
+
+  
+  $(".one").hide();
+  $(".two").hide();
+  $(".scorepopup").css("display","block");
+  $(".endbtn").css("display","block");
+  $(".endbtn1 ").css("display","none");
+  
+
+}
 
 
 
@@ -1996,17 +2064,50 @@ function checkQuizPoints(){
   let points4ThisLocation = 15+ quizPoints;
   document.getElementById("totalpoints4sect").innerHTML = `${points4ThisLocation}`
 
-  //putting the final total points in the end page 
-  
-  
-  
+
 } 
  
 }
 
 
-$(".endpgbtn").click(function(){
-  $("#scorepopup").css("display","flex");
+//count what voucher amt the user wins
+function voucheramt(){
+  if (localStorage.getItem("userStats") !== null) {
+    let userStats = JSON.parse(localStorage.getItem("userStats"));
+    if (userStats.points ==100){
+      document.getElementById("vamt").innerHTML= `$30 CapitaLand Voucher`
+    } else if ((userStats.points >= 80)&&(userStats.points< 100)) {
+      document.getElementById("vamt").innerHTML= `$20 CapitaLand Voucher`
+    }
+      else if ((userStats.points >= 60)&&(userStats.points< 80)) {
+        document.getElementById("vamt").innerHTML= `$10 CapitaLand Voucher`
+        
+  
+      }else if ((userStats.points >= 30)&&(userStats.points< 60)) {
+        document.getElementById("vamt").innerHTML= `$5 CapitaLand Voucher`
+        
+  
+      }
+  }
+
+};
+
+// show scoreboard to user at end page
+$(".nexttotalp").click(function(){
+  $(".scorepopup").css("z-index","5");
+  $(".scorepopup").css({"display":"flex",
+  "top":"30px"});
+  scoreboard();
+  if (localStorage.getItem("groupStats") !== null){
+    $(".boarditems").append(
+      `<div class="scoreboardf">
+      <img src="photos/friendpoints.png" class="friendcirclepts">
+      `
+    )
+    
+  }
+  
+  
   });
 
 function lastPage(text){
@@ -2015,7 +2116,12 @@ function lastPage(text){
 let endPg= new lastPage("To show my gratitude for your help, here are some prizes just for you! Please show this screeenshot to a staff at the location below to collect your prizes")
 
 function endPage(){
-  $(".bubble").empty();
+  //clearing groupStats in local storage 
+  window.localStorage.removeItem('groupStats');
+  voucheramt();
+  $(".janice").css("display","none");
+  $(".scorepopup").css("display","none");
+  $(".bubble").css("display","none");
   $(".scorepopup").empty();
   $(".itemsdisplay").css("display","none");
   $(".nextpg").empty();
@@ -2037,7 +2143,39 @@ function endPage(){
   $(".prizestitle").css("display","block");
   $(".prizescollected").css("display","block");
   $(".titleloc").css("display","block");
-  $(".footerimg").css("display","flex;")
+  $(".footerimg").css("display","flex");
+  $(".homebtn").css("display","flex");
+  $(".backhome").css("display","flex");
   
 }
 
+// when game ends or user decides to end it early
+$(".rpoints").click(function(){
+  console.log("hi")
+  if (localStorage.getItem("userStats") !== null) {
+    let userStats = JSON.parse(localStorage.getItem("userStats"));
+    console.log(userStats.points)
+    $(".pointsearned").append(`<p id="textpoints">${userStats.points}</p>`)
+    $(".pointsearned").css("display","flex");
+    $(".rpoints").hide();
+    
+    // showing users total points
+    voucheramt();
+    console.log(userStats.points)
+    //showing items the user has collected
+    if(userStats.itemsCollected ==1 ){
+      $(".lunchbox").hide();
+      $(".charger").hide();
+      $(".bag").hide();
+    } else if (userStats.itemsCollected ==2 ){
+     
+      $(".charger").hide();
+      $(".bag").hide();
+    } else if (userStats.itemsCollected ==3 ){
+     
+      $(".charger").hide();
+      
+    }
+
+  }
+});
