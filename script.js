@@ -2087,6 +2087,8 @@ function voucheramt(){
         document.getElementById("vamt").innerHTML= `$5 CapitaLand Voucher`
         
   
+      }else{
+        document.getElementById("vamt").innerHTML= ` `
       }
   }
 
