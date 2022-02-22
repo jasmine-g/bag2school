@@ -107,6 +107,8 @@ body{
     position:absolute;
     top:18%;
     left:53%;
+    width: 300px; 
+    height: 300px;
 }
 
 /*Questions page*/
@@ -231,6 +233,7 @@ input.submit1{
     width:70%;
     left:30px;
     z-index: -2;
+    
 }
 
 .bubble {
@@ -309,7 +312,7 @@ a{
 .arrowbk{
     display:flex;
     flex-direction:arrow;
-    
+    margin-top: 50px;
    
 }
 .back{
@@ -486,10 +489,11 @@ label.f{
 }
 
 .imageclue{
-    display:flex;
+    display:none;
+    
     justify-content:center;
     align-items: center;
-    margin:40px;
+   
 }
 .reveal{
     display:flex;
@@ -519,7 +523,6 @@ label.f{
     margin-bottom: 30px;
     font-family: "Raleway";
     font-weight: 600;
-    margin-top:70px;
 }
 .reachbtn{
     display:flex;
@@ -540,7 +543,6 @@ label.f{
     border:none;
     font-size:20px;
     font-weight: 600;
-    margin-top: 100px;
 
 }
 #babtn:hover{
@@ -634,6 +636,33 @@ label.f{
 .titleloc{
     display:none;
 }
+
+
+
+
+
+
+.backhome{
+    display:none;
+    align-items: flex-end;
+    justify-content: end;
+    padding-right:5px;
+}
+.homebtn{
+    border-radius:10px;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #BD5859;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    border:none;
+    font-size:25px;
+    margin: 10px;
+}
+
 
 
 /* passcode pop up*/
@@ -734,7 +763,7 @@ label.f{
 .text{
     text-align:center;
     margin-top:0;
-    
+    margin-left:25px;
     color:#066370;
     font-family: "Raleway",Arial, Helvetica, sans-serif;
  
@@ -752,10 +781,10 @@ label.f{
 .placename{
     color:#793B36;
     font-family:"Raleway",Arial, Helvetica, sans-serif; 
-   text-align: center;
+   text-align: left;
    font-size: 40px;
    margin-top:350px;
-   margin-right:400px;
+   margin-right:460px;
    font-weight: 100px;
    display:none;
 }
@@ -790,7 +819,6 @@ label.f{
     display: block; 
     transition: 0.3s; 
   }
-  
   
   
  
@@ -830,6 +858,22 @@ label.f{
     
 }
 .endbtn{
+    border-radius:10px;
+    padding-left:50px;
+    padding-right:50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #793B36;
+    color:#FAF6DF;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-weight:600;
+    text-decoration: none;
+    border:none;
+    font-size:20px;
+    margin: 40px;
+}
+
+.endbtn1{
     border-radius:10px;
     padding-left:50px;
     padding-right:50px;
@@ -1217,7 +1261,9 @@ img#ans{
     font-weight: 600;
     margin-left:500px;
     margin-top: 70px;
+    
 }
+
 #quizresult{
     font-size:100px;
     font-family: "Raleway",Arial, Helvetica, sans-serif;
@@ -1275,40 +1321,52 @@ img#ans{
 /*TOTAL ITEMS + POINTS*/
 .earned{
     display:block;
-    background-color: #f8f5e2;
+    background-color: #FFFBE0;
     width:700px;
     height:300px;
     margin:auto;
-    box-shadow: 5px 7px 3px rgba(0,0,0,0.3);
-    border-radius: 10px;
 }
 .textearned{
     display:flex;
     align-items: center;
     justify-content: center;
     padding-top: 40px;
+    margin-top: 200px;
 }
 .textearned{
     color:#DC7273;
     font-size: 50px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    
     
 }
 .pointsearned{
-    display:flex;
+    
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    display:none;
 }
 #textpoints{
     color:#DC7273;
-    font-size: 70px;
+    font-size: 100px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    animation: shake 1s infinite;
 }
+
+@keyframes shake {
+    0%{transform: rotate(-20deg);}
+    50%{transform: rotate(20deg);}
+    100%{transform: rotate(-20deg);}
+  }
 .nextpg{
     display:flex;
     align-items: flex-end;
     justify-content: end;
     padding-right:5px;
 }
-#next-totalp{
+.nexttotalp{
     border-radius:10px;
     padding-left:40px;
     padding-right:40px;
@@ -1321,14 +1379,147 @@ img#ans{
     border:none;
     font-size:25px;
     margin: 10px;
+    margin-right: 30px;
 }
-.scorepopup{
+.itemsdisplay{
+    display:flex;
+    align-items:baseline;
+    justify-content: center;
+    bottom:0px;
+    position: relative;
+
+}
+.earnedstar{
+    margin:0;
+margin-left: 20px;
+    margin-bottom: 100px;
+    animation: shake 1s infinite;
+}
+
+.mapiconText{
+    position:absolute;
+}
+.winnerid{
+    margin-right:140px;
+}
+.friendcirclepts{
+   margin-left: 500px;
+   position: absolute;
+   bottom: 160px;
+}
+.itemcollectedtext{
     display:flex;
     align-items: center;
     justify-content: center;
 }
-#scorepopup{
-    height:800px;
+#itemtext{
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    color:#006370;
+    font-size:50px;
+    text-align: center;
+    background-color:#FFFBE0;
+    width:700px;
+    margin-top:0px;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+.winnercontent{
+    margin-right: 10px;
+}
+
+#winnerid{
+    margin-right:140px;
+}
+.lunchbox{
+    position: absolute;
+    z-index:1;
+    width:310px;
+    height:224px;
+    margin-right:50%;
+    margin-top:10%;
+}
+.charger{
+   position: absolute;
+   z-index: 1;
+   width:266px;
+   height:166px;
+   margin-top:14%;
+}
+.bag{
+    position:absolute;
+    z-index:1;
+    width:345px;
+    height:270px;
+    margin-top:6%;
+
+}
+.pen{
+    position:absolute;
+    z-index:1;
+    width:345px;
+    height:166px;
+    margin-right:350px;
+    margin-top:17%;
+}
+.higher1{
+    margin-right:20px;
+    margin-left:20px;
+    height:500px;
+    width:270px;
+    margin-top:100%;
+}
+.higher2{
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:100%;
+}
+.lower1{
+    margin-right:20px;
+    margin-left:20px;
+    margin-top:100%;
+}
+.lower2{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:100%;
+}
+.redthing1{
+    height:500px;
+}
+.redthing2{
+    height:500px;
+}
+.redething3{
+    height:500px;
+}
+.redthing4{
+    height:500px;
+}
+
+/*SCOREBOARD POPUP*/
+.scorenextbtn{
+    background-color: #793B36;
+    color:#FFFBE0;
+    border-radius:20px;
+    width:130px;
+    height:40px;
+    font-size: 30px;
+    border-style: none;
+    font-family:"Raleway",Arial, Helvetica, sans-serif; 
+    font-weight: 600;
+    margin-left:500px;
+    margin-top: 130px;
+    z-index:5;
+    position: absolute;
+}
+.scorepopupcontainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.scorepopup{
+    height:1200px;
     width:700px;
     border-radius:30px;
     border-color:#006370;
@@ -1337,9 +1528,12 @@ img#ans{
     border-style: solid;
     display:none;
     flex-direction: column;
-    position:absolute;
-    z-index:1;
-
+    margin-left:380px;
+    margin-right: auto;
+    margin-top:30px;
+    position: absolute;
+ 
+    
 }
 .scoreboard{
     -webkit-animation:fadeIn 1s;
@@ -1359,30 +1553,76 @@ img#ans{
     align-items: center;
     justify-content: center;
 }
-#scoretitle{
+.scoretitle{
     font-family: 'Modak',Arial, Helvetica, sans-serif;
     color:#006370;
-    font-size: 60px;
+    font-size: 70px;
+    display:inline-block;
 }
-.itemsdisplay{
+.poscolumn{
     display:flex;
-    align-items:baseline;
-    justify-content: baseline;
-    bottom:0px;
+   
+    flex-direction: row;
+}
+
+.winnercontent{
+    display:inline-block;
+    margin-left: 20px;
+}
+
+.pointnstar{
+    display:inline-flex;
+    align-items:flex-end;
+    justify-content: end;
+    float:right;
+}
+.runnerupcontent{
+    background-color: #A5E8E4;
+    color:#870F06;
+    width:80%;
+    border-radius: 20px;
+    font-family: "Raleway",Arial, Helvetica, sans-serif;
+    font-size:40px;
+    height:80px;
+    box-shadow:5px 10px 10px 5px  rgba(0,0,0,0.3) inset;
+    padding-right: 0;
+    display:flex;
+    flex-direction: row;
+    padding-bottom: 40px;
+  
+    margin-bottom: 30px;
+    text-align: left;
+    margin-left:75px ;
+}
+
+.scoreboardpoints1{
+    margin-left: 200px;
+    margin-top: 35px;
+    font-size: 50px;
+}
+
+.scoreboardstar{
+    margin-left: 20px;
+    margin-top: 50px;
+  
+}
+
+.rpoints{
+    display:block;
+    padding:15px;
+    padding-left: 40px;
+    padding-right:40px;
+    background-color: #CF726B;
+    font-size:35px;
+    margin:auto;
+    border-radius: 50px;
+    color:#FFFBE0;
+    font-family: 'Raleway';
+    font-weight: 700;
     position: relative;
-    margin-top:400px;
-    margin-left:25%;
+    border:none;
 }
 
-
-
-#podium{
-    bottom:0px;
-    position: sticky;
-}
-.mapiconText{
-    position:absolute;
-}
 
 /*map in menu*/
 #fit {
@@ -1426,5 +1666,255 @@ img#ans{
         left:0%;
     }
 
+   
+
     /*media queries*/
 
+    @media (max-width:992px){
+
+        /*index html pg*/
+        body {
+            min-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .campus{
+            width:110%;
+            height:80%;
+            display:flex;
+            justify-content: center;
+            object-fit: none;
+            left:0px;
+            margin:0;
+            margin-top:30%;
+            right:0px;
+        }
+
+        .title{
+            font-size:160px;
+            
+            display:flex;
+            flex-wrap: wrap;
+            text-align: left;
+            padding:20px;
+        }
+        
+        .startbutton{
+          margin-top:50%;
+          
+         
+        }
+        .intro{
+            margin-left:30px;
+            margin-top: 50px;
+            padding-left:30px;
+        }
+        
+        .logos{
+            margin-left: 90px;
+        }
+        #anim{
+            
+            top:350px;
+            
+        }
+
+        
+        .bubble{
+            width:300px;
+        }
+
+
+    
+/*location*/
+.bubble{
+    font-size: 15px;
+  padding-right:20px;
+  margin-bottom: 150px;
+  margin-right: 50px;
+  margin-top: 100px;
+  
+}
+
+.bubble:after{
+    left:-40px;
+}
+
+.janice{
+    margin-right: 100px;
+ 
+  
+    margin-top:50px;
+}
+.bar{
+    margin-left:10px;
+}
+.bar_in{margin-left:10px;
+}
+
+
+.amt{
+    margin-left: 10px;
+}
+.text{
+    margin-left:0px;
+}
+.placename{
+    margin-right: 80px;
+}
+#babtn{
+    width:300px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+  
+}
+.quiz h3{
+    font-size: 15px;
+}
+.quizT{
+    font-size:30px;
+}
+.amt{
+    font-size: 30px;
+}
+.back{
+    width:30px;
+}
+.backt{
+    font-size: 15px;
+}
+.baans{
+    font-size: 15px;
+}
+.passcodesubmit{
+    font-size: 15px;
+    width:100px;
+    margin-left: 180px;
+}
+
+.dropbtn{
+    width:400px;
+    margin-right: 80px;
+}
+.dropdown-content{
+    width:400px;
+    margin-right: 80px;
+}
+
+
+/*total items*/
+.earned{
+    display:block;
+    margin:auto;
+    height:200px;
+    width:312px;        
+}
+.textearned{
+    font-size:30px;
+    text-align: center;
+}#textpoints{
+    font-size:509px;
+}
+#itemtext{
+    font-size:30px;
+}
+.endbackground{
+    min-width:100%;
+}
+.bubble{
+    font-size: 30px;
+    padding-right:20px;
+    margin-bottom: 150px;
+}
+.itemcollectedtext{
+    font-size:20px;
+    text-align: center;
+}
+#next-totalp{
+    font-size:15px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius:7px;
+}
+.endbtn{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius:7px;
+}
+.pointsearned{
+    height:100px;
+    width:80px;
+    margin-left:5px;
+    margin-right:5px;
+    margin:auto;
+}
+.lower1{
+    height:240px;
+    width:80px;
+    margin-left:5px;
+    margin-right:5px;
+}
+.lower2{
+    height:240px;
+    width:80px;
+    margin-left:5px;
+    margin-right:5px;
+}
+.higher1{
+    height:300px;
+    width:80px;
+    margin-right:5px;
+    margin-left:5px;
+}
+.higher2{
+    height:300px;
+    width:80px;
+    margin-left:5px;
+    margin-right:5px;
+}
+.lunchbox{
+    width:106px;
+    height: 60px;
+    margin-top:19%;
+}
+.charger{
+    margin-top:70px;
+    width:105px;
+    height:56px;
+}
+.pen{
+    width:95px;
+    height:99px;
+}
+.bag{
+    width:104px;
+    height:85px;
+    margin-top:35px;
+}
+.itemsdisplay{
+    display:flex;
+    bottom:0px;
+    align-items:baseline;
+    justify-content: center;
+    margin-left:32px;
+}
+#scorepopup{
+    width:383px;
+    height:722px;
+    border-width:10px;
+    align-items:flex-start;
+    justify-content:flex-end;
+}
+.idpopupbtn{
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border-radius:7px;
+}
+}
